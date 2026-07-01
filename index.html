@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ritu's Kitchen — Homely food, away from home</title>
+<meta name="description" content="Home-cooked Indian meals in Auroville. Pre-booking only. Gluten-free, vegan, and full-of-love options. WhatsApp 90431 40686.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+:root {
+  --green: #244A36;
+  --green-dark: #183528;
+  --cream: #FFF8ED;
+  --cream-soft: #F7EEDC;
+  --terracotta: #C8663D;
+  --gold: #D99B36;
+  --ink: #1F2421;
+  --body: #4C544F;
+  --muted: #727A75;
+  --border: #E4DED2;
+  --surface: #FFFFFF;
+  --success: #2E7D4F;
+  --warning: #A66A12;
+  --error: #B23A3A;
+  --shadow-card: 0 4px 18px rgba(31,36,33,0.06);
+  --shadow-hover: 0 12px 32px rgba(31,36,33,0.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--body);
+  background: var(--cream);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; color: var(--ink); margin: 0; font-weight: 400; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* Announcement bar */
+.announcement {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 36px;
+  background: var(--green-dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  z-index: 1002;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 36px; left: 0; right: 0;
+  height: 72px;
+  background: rgba(255,248,237,0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: height 0.3s ease, top 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled { height: 60px; top: 0; box-shadow: 0 2px 20px rgba(31,36,33,0.06); }
+.header .container { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; color: var(--green); text-decoration: none; }
+.nav { display: flex; gap: 32px; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; position: relative; }
+.nav a::after { content:''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--terracotta); transition: width 0.2s; }
+.nav a:hover::after { width: 100%; }
+.header-cta {
+  background: var(--green);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.header-cta:hover { background: var(--green-dark); }
+.cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--green);
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 12px;
+}
+.cart-count {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.mobile-toggle { display: none; background: none; border: none; font-size: 24px; color: var(--green); }
+@media (max-width: 768px) {
+  .announcement { font-size: 12px; padding: 0 12px; text-align: center; }
+  .header { top: 32px; height: 64px; }
+  .header.scrolled { height: 56px; top: 0; }
+  .nav { display: none; }
+  .header-cta { display: none; }
+  .cart-btn { margin-left: auto; margin-right: 12px; }
+  .mobile-toggle { display: block; }
+  .logo { font-size: 22px; }
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh;
+  background: var(--surface);
+  z-index: 1001;
+  padding: 80px 24px 24px;
+  transition: right 0.3s ease;
+  box-shadow: -10px 0 40px rgba(31,36,33,0.12);
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a { display: block; color: var(--ink); text-decoration: none; font-size: 18px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.mobile-menu .close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; color: var(--green); }
+.mobile-overlay {
+  position: fixed; inset: 0; background: rgba(31,36,33,0.4);
+  z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.mobile-overlay.open { opacity: 1; pointer-events: all; }
+
+section { position: relative; padding: 100px 0; }
+@media (max-width: 768px) { section { padding: 64px 0; } }
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  background: var(--cream);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  right: 0; top: 0;
+  width: 55%; height: 100%;
+  background: url('images/ritu-hero-filter-coffee.jpg') center/cover no-repeat;
+  border-radius: 0 0 0 40px;
+}
+.hero-bg::after {
+  content:'';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--cream) 0%, transparent 40%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 540px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--terracotta);
+  margin-bottom: 20px;
+}
+.hero h1 { font-size: 60px; line-height: 1.05; margin-bottom: 24px; }
+.hero p { font-size: 18px; color: var(--body); margin-bottom: 32px; max-width: 460px; }
+.hero-trust { display: flex; gap: 24px; margin-top: 40px; font-size: 14px; color: var(--muted); }
+.hero-trust span { display: flex; align-items: center; gap: 6px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 50px; padding: 0 24px; border-radius: 12px;
+  font-weight: 600; font-size: 15px; text-decoration: none; border: none; cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.btn-primary { background: var(--green); color: #fff; }
+.btn-primary:hover { background: var(--green-dark); }
+.btn-secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+@media (max-width: 768px) {
+  .hero { padding-top: 120px; flex-direction: column; }
+  .hero-bg { width: 100%; height: 42vh; position: relative; border-radius: 0 0 28px 28px; order: 2; }
+  .hero-bg::after { background: linear-gradient(to top, var(--cream) 0%, transparent 55%); }
+  .hero-content { order: 1; max-width: 100%; text-align: center; padding-bottom: 40px; }
+  .hero h1 { font-size: 38px; }
+  .hero p { font-size: 16px; margin-left: auto; margin-right: auto; }
+  .hero-trust { justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .btn { width: 100%; }
+}
+
+/* Story */
+.story-section { background: var(--surface); border-radius: 32px; margin: 0 24px; padding: 80px 0; }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.story-card {
+  background: var(--cream-soft);
+  padding: 48px;
+  border-radius: 24px;
+  transform: rotate(-1deg);
+  box-shadow: var(--shadow-card);
+}
+.story-card-inner { transform: rotate(1deg); }
+.story-card h2 { font-size: 36px; margin-bottom: 16px; }
+.story-card p { font-size: 16px; }
+.story-card .signature { font-family: 'DM Serif Display', serif; color: var(--terracotta); font-size: 22px; margin-top: 24px; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 600;
+}
+.badge-gf { background: #E8F5E9; color: var(--success); }
+.badge-vegan { background: #FFF3E0; color: var(--warning); }
+.badge-fresh { background: #E3F2FD; color: var(--green); }
+.badge-nomaida { background: #F3E5F5; color: #6A1B9A; }
+.story-image { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-card); }
+.story-image img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 768px) {
+  .story-section { margin: 0 12px; border-radius: 24px; }
+  .story-grid { grid-template-columns: 1fr; gap: 40px; }
+  .story-card { padding: 32px; }
+  .story-card h2 { font-size: 28px; }
+  .story-image { order: -1; height: 280px; }
+}
+
+/* Menu sections */
+.section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.section-header h2 { font-size: 44px; margin-bottom: 16px; }
+.section-header p { font-size: 17px; color: var(--muted); }
+@media (max-width: 768px) { .section-header h2 { font-size: 32px; } }
+
+.menu-section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--green);
+  margin: 0 0 32px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.dish-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 80px; }
+.dish-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+.dish-card-visual { position: relative; }
+.dish-card-visual img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.dish-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.dish-card-body h3 { font-size: 24px; margin-bottom: 8px; }
+.dish-card-body .price { font-size: 22px; color: var(--green); font-weight: 700; margin-bottom: 12px; }
+.dish-card-body p { font-size: 15px; margin-bottom: 16px; flex: 1; }
+.dish-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.dish-tags span { font-size: 12px; padding: 5px 10px; border-radius: 999px; background: var(--cream-soft); color: var(--muted); font-weight: 600; }
+.dish-card-body .btn { width: 100%; }
+.dish-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+.dish-qty-row input[type="number"] {
+  width: 58px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.dish-qty-row .add-to-cart { flex: 1; }
+
+.addon-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+.addon-btn {
+  background: var(--cream-soft);
+  color: var(--green-dark);
+  border: 1px solid var(--green);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.addon-btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+.addon-btn.added { background: var(--success); border-color: var(--success); color: #fff; }
+.addon-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  margin-bottom: -4px;
+}
+
+@media (max-width: 768px) {
+  .dish-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 64px; }
+  .dish-card-body h3 { font-size: 22px; }
+  .dish-qty-row input[type="number"] { width: 52px; padding: 8px; }
+}
+
+/* Thali section */
+.thali-section { background: var(--green); color: #fff; padding: 120px 0; }
+.thali-section h2 { color: #fff; }
+.thali-section .section-header p { color: rgba(255,255,255,0.8); }
+.thali-plate {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  background: rgba(255,255,255,0.08);
+  border: 2px dashed rgba(255,255,255,0.25);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.thali-center { text-align: center; }
+.thali-center h3 { color: #fff; font-size: 28px; margin-bottom: 8px; }
+.thali-center p { color: rgba(255,255,255,0.75); margin: 0; font-size: 14px; }
+.thali-item {
+  position: absolute;
+  text-align: center;
+  width: 120px;
+}
+.thali-item img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; border: 3px solid #fff; }
+.thali-item span { color: #fff; font-size: 13px; font-weight: 600; display: block; }
+.thali-item small { color: rgba(255,255,255,0.75); font-size: 11px; }
+.thali-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+.thali-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.thali-card:hover, .thali-card.active { background: rgba(255,255,255,0.2); transform: translateY(-4px); }
+.thali-card .add-to-cart {
+  margin-top: 14px;
+  width: 100%;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.thali-card .add-to-cart:hover { background: var(--terracotta); }
+.thali-card .add-to-cart.added { background: var(--success); }
+
+.thali-meal-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.thali-meal-note {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+.meal-btn {
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s, background 0.2s;
+}
+.meal-btn:hover { background: var(--terracotta); transform: translateY(-2px); }
+.meal-btn.added { background: var(--success); }
+.meal-btn-pref {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: none;
+}
+.meal-btn-pref:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+.meal-btn-pref.added { background: rgba(255,255,255,0.25); border-color: var(--gold); }
+@media (max-width: 768px) {
+  .thali-meal-buttons { grid-template-columns: 1fr; }
+}
+.thali-card h4 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+.thali-card .price { font-size: 22px; font-weight: 700; color: var(--gold); }
+.thali-card .note { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 8px; }
+@media (max-width: 768px) {
+  .thali-options { grid-template-columns: repeat(2, 1fr); }
+  .thali-item { width: 90px; }
+  .thali-item img { width: 60px; height: 60px; }
+  .thali-item span { font-size: 11px; }
+}
+
+/* Values */
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.value-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+.value-icon { font-size: 32px; margin-bottom: 16px; }
+.value-card h4 { font-size: 20px; margin-bottom: 8px; }
+.value-card p { font-size: 14px; color: var(--muted); margin: 0; }
+@media (max-width: 768px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .value-card { padding: 24px 16px; }
+}
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.step {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+}
+.step-number {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--cream-soft);
+  color: var(--green);
+  display: grid; place-items: center;
+  font-size: 24px; font-weight: 700;
+  margin: 0 auto 20px;
+  font-family: 'DM Serif Display', serif;
+}
+.step h4 { font-size: 22px; margin-bottom: 10px; }
+.step p { font-size: 15px; color: var(--muted); margin: 0; }
+@media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
+
+/* Testimonials */
+.testimonials-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.testimonial {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+}
+.stars { color: var(--gold); font-size: 18px; margin-bottom: 16px; }
+.testimonial q { font-size: 16px; color: var(--ink); line-height: 1.6; display: block; margin-bottom: 20px; }
+.testimonial .name { font-weight: 700; color: var(--ink); }
+.testimonial .place { font-size: 13px; color: var(--muted); }
+@media (max-width: 1100px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+/* WhatsApp CTA */
+.whatsapp-section {
+  background: var(--cream-soft);
+  color: var(--ink);
+  text-align: center;
+  padding: 120px 0;
+}
+.whatsapp-section h2 { color: var(--green-dark); font-size: 44px; margin-bottom: 16px; }
+.whatsapp-section p { font-size: 18px; color: var(--muted); max-width: 540px; margin: 0 auto 32px; }
+.whatsapp-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: #fff;
+  padding: 18px 32px; border-radius: 999px;
+  font-size: 18px; font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-btn:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(37,211,102,0.3); }
+.preorder-time {
+  max-width: 480px;
+  margin: 0 auto 28px;
+  text-align: left;
+  display: grid;
+  gap: 12px;
+}
+.preorder-time label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: -6px;
+}
+.preorder-time input,
+.preorder-time select,
+.preorder-time textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 15px;
+  background: #fff;
+  color: var(--ink);
+}
+.preorder-time textarea { resize: vertical; min-height: 64px; }
+
+@media (max-width: 768px) {
+  .whatsapp-section h2 { font-size: 32px; }
+  .whatsapp-btn { width: 100%; justify-content: center; }
+  .preorder-cart { padding: 20px; }
+}
+
+/* Pre-order cart summary */
+.preorder-cart {
+  max-width: 620px;
+  margin: 40px auto 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  text-align: left;
+  box-shadow: var(--shadow-card);
+}
+.preorder-cart h4 { color: var(--green-dark); font-size: 18px; margin: 0; }
+.preorder-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.preorder-add-more {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+}
+.preorder-add-more:hover { color: var(--green-dark); text-decoration: underline; }
+.preorder-cart-empty { color: var(--muted); text-align: center; padding: 24px 0; }
+.preorder-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.preorder-cart-item:last-child { border-bottom: none; }
+.preorder-cart-item-name { font-weight: 600; color: var(--ink); }
+.preorder-cart-item-meta { color: var(--muted); font-size: 13px; }
+.preorder-cart-remove {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.preorder-cart-remove:hover { background: var(--terracotta); color: #fff; border-color: var(--terracotta); }
+.preorder-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid var(--border);
+}
+.preorder-cart-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 20px;
+  line-height: 1.5;
+}
+.footer { background: var(--ink); color: rgba(255,255,255,0.75); padding: 80px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; }
+.footer h4 { color: #fff; font-size: 18px; margin-bottom: 20px; }
+.footer a { color: rgba(255,255,255,0.75); text-decoration: none; display: block; margin-bottom: 10px; }
+.footer a:hover { color: #fff; }
+.footer-brand .logo { color: #fff; font-size: 28px; display: inline-block; margin-bottom: 16px; }
+.footer-brand p { font-size: 14px; line-height: 1.7; margin: 0; }
+.footer-contact p { margin: 0 0 10px; font-size: 14px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 56px; padding-top: 24px;
+  text-align: center; font-size: 13px;
+}
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+/* Sticky mobile CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  display: none;
+  gap: 12px;
+  z-index: 999;
+}
+.sticky-cta .btn { flex: 1; height: 48px; font-size: 14px; }
+
+/* Floating mini cart */
+.mini-cart {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 998;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  font-size: 14px;
+  color: var(--ink);
+  min-width: 280px;
+  max-width: 92vw;
+}
+.mini-cart.has-items { display: flex; }
+.mini-cart-count {
+  background: var(--terracotta);
+  color: #fff;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+}
+.mini-cart-info { flex: 1; }
+.mini-cart-total { font-weight: 700; color: var(--green-dark); }
+.mini-cart-note { font-size: 11px; color: var(--muted); }
+.mini-cart-btn {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
+}
+.mini-cart-btn:hover { background: var(--green-dark); }
+
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  body { padding-bottom: 80px; }
+  .mini-cart { bottom: 88px; }
+}
+
+.reveal { opacity: 1; transform: translateY(0); }
+.js-on .reveal { opacity: 0; transform: translateY(24px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+.dish-placeholder {
+  width: 100%;
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cream-soft) 0%, var(--border) 100%);
+  border-radius: 20px 20px 0 0;
+  color: var(--green);
+  text-align: center;
+}
+.dish-placeholder span { font-size: 48px; margin-bottom: 8px; }
+.dish-placeholder p { margin: 0; font-size: 14px; font-weight: 600; }
+
+
+/* Confused call banner */
+.confused-call {
+  background: var(--cream-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--body);
+}
+.confused-call strong { color: var(--ink); }
+.btn-call {
+  background: var(--terracotta);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-call:hover { background: #a65230; }
+
+/* Jazz ambience player */
+.jazz-player {
+  position: fixed;
+  bottom: 78px;
+  left: 16px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: var(--shadow-card);
+  font-size: 13px;
+  color: var(--muted);
+}
+.jazz-player button {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  display: grid; place-items: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.jazz-player button:hover { background: var(--green-dark); }
+.jazz-player .close-jazz {
+  background: var(--muted);
+  font-size: 12px;
+}
+.jazz-player .close-jazz:hover { background: var(--brown); }
+.hidden { display: none !important; }
+@media (max-width: 768px) {
+  .jazz-player { bottom: 90px; left: 12px; }
+}
+
+/* Cart drawer */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 35, 30, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+.cart-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  width: 420px; max-width: 92vw;
+  height: 100vh;
+  background: var(--cream-soft);
+  color: var(--ink);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 40px rgba(0,0,0,0.18);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cart-drawer.open { transform: translateX(0); }
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.cart-header h3 { font-size: 22px; color: var(--green-dark); margin: 0; }
+.cart-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid; place-items: center;
+}
+.cart-close:hover { background: var(--terracotta); color: #fff; border-color: var(--terracotta); }
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+.cart-empty-icon { font-size: 52px; margin-bottom: 12px; }
+.cart-empty p { margin: 0; font-size: 16px; }
+
+.cart-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-card);
+}
+.cart-item-thumb {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: var(--cream-soft);
+  display: grid; place-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-name { font-weight: 700; color: var(--ink); font-size: 15px; margin-bottom: 4px; line-height: 1.35; }
+.cart-item-price { color: var(--green); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+
+.cart-item-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cream-soft);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+.cart-item-controls button {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid; place-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.cart-item-controls button:hover { background: var(--green); color: #fff; }
+.cart-item-controls span { min-width: 22px; text-align: center; font-weight: 700; font-size: 14px; }
+
+.cart-item-remove {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.cart-item-remove:hover { background: var(--terracotta); color: #fff; border-color: var(--terracotta); }
+
+.cart-footer {
+  border-top: 1px solid var(--border);
+  padding: 22px 28px 28px;
+  background: #fff;
+}
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.cart-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+.cart-checkout {
+  width: 100%;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 16px 20px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cart-checkout:hover { transform: scale(1.02); box-shadow: 0 10px 28px rgba(37,211,102,0.28); }
+
+@media (max-width: 768px) {
+  .cart-drawer { width: 100%; max-width: 100%; border-radius: 20px 20px 0 0; height: 85vh; top: auto; bottom: 0; transform: translateY(100%); }
+  .cart-drawer.open { transform: translateY(0); }
+  .cart-header, .cart-body, .cart-footer { padding-left: 20px; padding-right: 20px; }
+}
+
+/* Testimonial marquee */
+.testimonial-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 40px 0;
+}
+.testimonial-track {
+  display: inline-flex;
+  gap: 24px;
+  animation: marquee 30s linear infinite;
+}
+.testimonial-marquee:hover .testimonial-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testimonial-float {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px 28px;
+  box-shadow: var(--shadow-card);
+  min-width: 340px;
+  white-space: normal;
+}
+.testimonial-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--cream-soft);
+  display: grid; place-items: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.testimonial-float q {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.testimonial-float .name { font-weight: 700; color: var(--ink); font-size: 14px; }
+.testimonial-float .place { font-size: 12px; color: var(--muted); }
+
+
+/* Cart icon in header */
+.cart-icon {
+  position: relative;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 8px;
+}
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: none;
+  place-items: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="announcement">Pre-booking only. 24 hours notice required for all meals.</div>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="#" class="logo">Ritu's Kitchen</a>
+    <nav class="nav">
+      <a href="#menu">Menu</a>
+      <a href="#thali">Thali</a>
+      <a href="#how">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="header-cta">Pre-order now</a>
+    <a href="#" class="cart-icon" id="cartBtn" aria-label="Open cart">🛒<span class="cart-badge" id="cartCount">0</span></a>
+    <button class="mobile-toggle" id="menuOpen" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="menuClose" aria-label="Close menu">×</button>
+  <a href="#menu">Menu</a>
+  <a href="#thali">Thali</a>
+  <a href="#how">How It Works</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+</div>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">Home-cooked • Fresh daily</div>
+      <h1 class="reveal">Homely food, away from home.</h1>
+      <p class="reveal">Where gluten-free, vegan, and full-of-love meet. Fresh, seasonal meals cooked like I cook for my own family.</p>
+      <div class="reveal">
+        <button class="btn btn-primary" id="heroPreOrderBtn">Pre-order now</button>
+        <a href="#menu" class="btn btn-secondary" style="margin-left:12px;">Explore today's menu</a>
+      </div>
+      <div class="hero-trust reveal">
+        <span>🌿 Gluten-free</span>
+        <span>🌱 Vegan swaps</span>
+        <span>🍃 No hidden maida</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story-section" id="about">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-card reveal">
+        <div class="story-card-inner">
+          <h2>Hi, I'm Ritu.</h2>
+          <p>I've always loved cooking for family and friends — and also my dog. It's how I show care: through a hot phulka, a bowl of dal, a wholesome nutritious meal.</p>
+          <p>A few months ago I went gluten-free, not for trend, but because my body asked me to. That changed how I cook. I became mindful of ingredients in a way I never was before. I started experimenting — jowar rotis that puff, coconut-milk paysum that tastes like childhood, cakes without wheat that still feel like celebration.</p>
+          <p>My promise is simple: fresh, seasonal food with no shortcuts. Every meal has vegan and gluten-free options — just tell me what you need when you book.</p>
+          <div class="signature">— Ritika Kukreja</div>
+          <div class="badge-row">
+            <span class="badge badge-gf">Gluten-free</span>
+            <span class="badge badge-vegan">Vegan</span>
+            <span class="badge badge-fresh">Fresh daily</span>
+            <span class="badge badge-nomaida">No hidden maida</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-image reveal">
+        <img src="images/ritu-tiffin-lunchbox.jpg" alt="Ritu packing a stainless steel tiffin with rice, sabji, chutney and a sweet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>From Ritu's kitchen today</h2>
+      <p>Rotating daily menu. Something new every day. All meals are pre-booked with 24 hours notice.</p>
+      <div class="confused-call reveal">
+        <span>😊</span>
+        <span><strong>Confused?</strong> Call to place your order directly.</span>
+        <a href="tel:+919043140686" class="btn-call">Call Ritu</a>
+      </div>
+    </div>
+
+    <h3 class="menu-section-title reveal">Breakfast</h3>
+    <div class="dish-grid reveal">
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-idli-sambar.jpg" alt="Soft steamed idlis with sambar and coconut chutney"></div>
+        <div class="dish-card-body">
+          <h3>Reg / Button Idli Sambar Chutney</h3>
+          <div class="price">₹110</div>
+          <p>Rice + urad dal. Nothing else. Naturally gluten-free and vegan. Seasonal sambar, fresh coconut chutney. The batter is home-made, freshly ground last night.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Reg / Button Idli Sambar Chutney">
+          <button class="add-to-cart" data-name="Reg / Button Idli Sambar Chutney" data-price="110">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-poori-frying.jpg" alt="Golden puffed pooris frying in hot oil"></div>
+        <div class="dish-card-body">
+          <h3>Poori Bhaaji</h3>
+          <div class="price">₹120</div>
+          <p>Wheat puris made the traditional way. GF swap: jowar-bajra puris with a day's notice. Bhaaji is my mother's recipe — aloo, hing, simple spices. No ghee on request.</p>
+          <div class="dish-tags"><span>GF swap</span><span>Vegan swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Poori Bhaaji">
+          <button class="add-to-cart" data-name="Poori Bhaaji" data-price="120">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-muesli-bowl.jpg" alt="Muesli bowl with toasted oats, berries, banana and almonds"></div>
+        <div class="dish-card-body">
+          <h3>Muesli Bowl</h3>
+          <div class="price">₹110</div>
+          <p>Oats toasted with jaggery and seeds. Choose almond, soy, or dairy milk. Gluten-free on request.</p>
+          <div class="dish-tags"><span>GF on request</span><span>Breakfast</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Muesli Bowl">
+          <button class="add-to-cart" data-name="Muesli Bowl" data-price="110">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-omelet-bread.jpg" alt="Farm-fresh omelet with butter-toasted bread and cherry tomatoes"></div>
+        <div class="dish-card-body">
+          <h3>Omelet Bread</h3>
+          <div class="price">₹140</div>
+          <p>Made from farm-fresh country eggs and served with butter-toasted bread.</p>
+          <div class="dish-tags"><span>Egg</span><span>Breakfast</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Omelet Bread">
+          <button class="add-to-cart" data-name="Omelet Bread" data-price="140">Add to cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="menu-section-title reveal">Breakfast Add-ons</h3>
+    <div class="dish-grid reveal">
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-sindhi-gujarati-breakfast.jpg" alt="Packed tiffin with parathas, snacks and fresh fruit"></div>
+        <div class="dish-card-body">
+          <h3>Sindhi / Gujarati Breakfast</h3>
+          <div class="price">₹150</div>
+          <p>Available on request. Authentic regional breakfast specials from my home.</p>
+          <div class="dish-tags"><span>On request</span></div>
+          <div class="dish-qty-row">
+            <input type="number" min="1" max="20" value="1" aria-label="Quantity for Sindhi / Gujarati Breakfast">
+            <button class="add-to-cart" data-name="Sindhi / Gujarati Breakfast" data-price="150">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-hero-filter-coffee.jpg" alt="Filter coffee at sunrise in Ritu's kitchen"></div>
+        <div class="dish-card-body">
+          <h3>Authentic Tea / Filter Coffee</h3>
+          <div class="price">₹49</div>
+          <p>South Indian filter coffee or home-style chai. Choose dairy, millet, or oat milk.</p>
+          <div class="dish-tags"><span>Millet milk +₹20</span><span>Oat milk +₹20</span></div>
+          <div class="addon-label">Base</div>
+          <div class="addon-buttons">
+            <button class="add-to-cart addon-btn" data-name="Authentic Tea" data-price="49">Tea ₹49</button>
+            <button class="add-to-cart addon-btn" data-name="Filter Coffee" data-price="49">Coffee ₹49</button>
+          </div>
+          <div class="addon-label">With milk alternative</div>
+          <div class="addon-buttons">
+            <button class="add-to-cart addon-btn" data-name="Millet Milk Tea" data-price="69">Millet Milk Tea ₹69</button>
+            <button class="add-to-cart addon-btn" data-name="Oat Milk Tea" data-price="69">Oat Milk Tea ₹69</button>
+          </div>
+          <div class="addon-buttons">
+            <button class="add-to-cart addon-btn" data-name="Millet Milk Coffee" data-price="69">Millet Milk Coffee ₹69</button>
+            <button class="add-to-cart addon-btn" data-name="Oat Milk Coffee" data-price="69">Oat Milk Coffee ₹69</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="menu-section-title reveal">Dinner Soups & Starters</h3>
+    <div class="dish-grid reveal">
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-pumpkin-soup.jpg" alt="Creamy roasted pumpkin soup with ginger swirl"></div>
+        <div class="dish-card-body">
+          <h3>Roasted Pumpkin with Ginger Soup</h3>
+          <div class="price">₹110</div>
+          <p>Served with a slice of bread. Naturally gluten-free. Warm, earthy, and comforting.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Roasted Pumpkin with Ginger Soup">
+          <button class="add-to-cart" data-name="Roasted Pumpkin with Ginger Soup" data-price="110">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-broccoli-almond-soup.jpg" alt="Creamy broccoli and almond soup with toasted almond slices and broccoli florets"></div>
+        <div class="dish-card-body">
+          <h3>Broccoli & Almond Soup</h3>
+          <div class="price">₹110</div>
+          <p>Served with a slice of bread. Creamy, nutty, and nourishing.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Broccoli & Almond Soup">
+          <button class="add-to-cart" data-name="Broccoli & Almond Soup" data-price="110">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-mushroom-soup.jpg" alt="Creamy peppery mushroom soup with thyme and sliced mushrooms"></div>
+        <div class="dish-card-body">
+          <h3>Mushroom Soup</h3>
+          <div class="price">₹110</div>
+          <p>Peppery, earthy mushrooms in a warm bowl. Served with bread.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Mushroom Soup">
+          <button class="add-to-cart" data-name="Mushroom Soup" data-price="110">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-honey-chilli-potato.jpg" alt="Crispy honey chilli potato fingers with sesame and spring onion"></div>
+        <div class="dish-card-body">
+          <h3>Honey Chilli Potato</h3>
+          <div class="price">₹130</div>
+          <p>Crispy potatoes in a sweet-spicy glaze. GF swap: maple syrup.</p>
+          <div class="dish-tags"><span>GF swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Honey Chilli Potato">
+          <button class="add-to-cart" data-name="Honey Chilli Potato" data-price="130">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-paneer-tikka.jpg" alt="Grilled paneer tikka skewers with peppers and green chutney"></div>
+        <div class="dish-card-body">
+          <h3>Paneer Tikka Skewers</h3>
+          <div class="price">₹130</div>
+          <p>Marinated paneer grilled to order. Vegan swap: tofu tikka.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Paneer Tikka Skewers">
+          <button class="add-to-cart" data-name="Paneer Tikka Skewers" data-price="130">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-cheese-garlic-bread.jpg" alt="Golden cheese garlic bread topped with parsley and butter"></div>
+        <div class="dish-card-body">
+          <h3>Cheese Garlic Bread</h3>
+          <div class="price">₹130</div>
+          <p>Buttery, cheesy garlic bread. GF swap: millet toast with garlic oil.</p>
+          <div class="dish-tags"><span>GF swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Cheese Garlic Bread">
+          <button class="add-to-cart" data-name="Cheese Garlic Bread" data-price="130">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-avocado-toast.jpg" alt="Creamy avocado toast topped with microgreens and seeds"></div>
+        <div class="dish-card-body">
+          <h3>Avocado Toast</h3>
+          <div class="price">₹150</div>
+          <p>Creamy avocado on butter-toasted bread. GF swap: millet toast on request.</p>
+          <div class="dish-tags"><span>GF swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Avocado Toast">
+          <button class="add-to-cart" data-name="Avocado Toast" data-price="150">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-popcorn.jpg" alt="Bowl of freshly popped golden popcorn"></div>
+        <div class="dish-card-body">
+          <h3>Tub of Popcorn</h3>
+          <div class="price">₹60</div>
+          <p>Light, crunchy, perfect with soup or as a starter snack.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Tub of Popcorn">
+          <button class="add-to-cart" data-name="Tub of Popcorn" data-price="60">Add to cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="menu-section-title reveal">Dessert</h3>
+    <div class="dish-grid reveal">
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-paysum.jpg" alt="Creamy paysum rice pudding with cashews and raisins"></div>
+        <div class="dish-card-body">
+          <h3>Paysum</h3>
+          <div class="price">₹60 · GF ₹90</div>
+          <p>Rice, coconut milk, and jaggery. Gluten-free. Vegan without ghee tadka.</p>
+          <div class="dish-tags"><span>GF</span><span>Vegan swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Paysum">
+          <button class="add-to-cart" data-name="Paysum" data-price="60">Add to cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-card-visual"><img src="images/ritu-kadha-prashad.jpg" alt="Traditional warm kadha prashad halwa with nuts"></div>
+        <div class="dish-card-body">
+          <h3>Kadha Prashad</h3>
+          <div class="price">₹60 · GF ₹90</div>
+          <p>Traditional wheat halwa. GF swap: GF halwa with jaggery.</p>
+          <div class="dish-tags"><span>GF swap</span></div>
+          <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Kadha Prashad">
+          <button class="add-to-cart" data-name="Kadha Prashad" data-price="60">Add to cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="thali-section" id="thali">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>One thali. No confusion.</h2>
+      <p>You eat what's cooking today. A complete plate with seasonal sabji, dal, rice, roti, salad, and a sweet.</p>
+    </div>
+
+    <div class="thali-plate reveal">
+      <div class="thali-center">
+        <h3>Thali Like Home</h3>
+        <p>Sabji · Dal · Rice · Roti · Salad · Sweet</p>
+      </div>
+      <div class="thali-item" style="top:8%; left:50%; transform:translateX(-50%);">
+        <img src="images/ritu-seasonal-sabji.jpg" alt="Sabji">
+        <span>Sabji</span>
+        <small>Seasonal · GF</small>
+      </div>
+      <div class="thali-item" style="top:30%; right:5%;">
+        <img src="images/ritu-dal-tadka.jpg" alt="Dal">
+        <span>Dal</span>
+        <small>Daily tadka · GF</small>
+      </div>
+      <div class="thali-item" style="bottom:30%; right:5%;">
+        <img src="images/ritu-jeera-rice.jpg" alt="Rice">
+        <span>Rice</span>
+        <small>Ghee / Jeera · GF</small>
+      </div>
+      <div class="thali-item" style="bottom:8%; left:50%; transform:translateX(-50%);">
+        <img src="images/ritu-jowar-roti.jpg" alt="Roti">
+        <span>Roti</span>
+        <small>Wheat · Millet swap</small>
+      </div>
+      <div class="thali-item" style="bottom:30%; left:5%;">
+        <img src="images/ritu-paysum.jpg" alt="Sweet">
+        <span>Sweet</span>
+        <small>Paysum / Kadha Prashad</small>
+      </div>
+      <div class="thali-item" style="top:30%; left:5%;">
+        <img src="images/ritu-thali-salad.jpg" alt="Salad" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 8px;border:3px solid #fff;">
+        <span>Salad</span>
+        <small>Fresh crunch</small>
+      </div>
+    </div>
+
+    <div class="thali-options reveal">
+      <div class="thali-card active">
+        <h4>Regular Veg Thali</h4>
+        <div class="price">₹220</div>
+        <div class="note">Whole wheat roti</div>
+        <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Regular Veg Thali">
+          <button class="add-to-cart" data-name="Regular Veg Thali" data-price="220">Add thali to cart</button>
+        </div>
+      </div>
+      <div class="thali-card">
+        <h4>Gluten-Free Thali</h4>
+        <div class="price">₹250</div>
+        <div class="note">Millet roti, no wheat</div>
+        <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Gluten-Free Thali">
+          <button class="add-to-cart" data-name="Gluten-Free Thali" data-price="250">Add thali to cart</button>
+        </div>
+      </div>
+      <div class="thali-card">
+        <h4>Egg Thali</h4>
+        <div class="price">₹320</div>
+        <div class="note">Egg curry included</div>
+        <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Egg Thali">
+          <button class="add-to-cart" data-name="Egg Thali" data-price="320">Add thali to cart</button>
+        </div>
+      </div>
+      <div class="thali-card">
+        <h4>Chicken / Fish Thali</h4>
+        <div class="price">₹420</div>
+        <div class="note">Non-veg curry</div>
+        <div class="dish-qty-row">
+          <input type="number" min="1" max="20" value="1" aria-label="Quantity for Chicken / Fish Thali">
+          <button class="add-to-cart" data-name="Chicken / Fish Thali" data-price="420">Add thali to cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="thali-meal-buttons reveal">
+      <p class="thali-meal-note">Tap to mark your meal time preference. Add a thali above for the actual order.</p>
+      <button class="add-to-cart meal-btn meal-btn-pref" data-name="Lunch Thali" data-price="0">🌞 Mark as Lunch</button>
+      <button class="add-to-cart meal-btn meal-btn-pref" data-name="Dinner Thali" data-price="0">🌙 Mark as Dinner</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Why order from Ritu's Kitchen?</h2>
+    </div>
+    <div class="values-grid reveal">
+      <div class="value-card">
+        <div class="value-icon">🍳</div>
+        <h4>Small batches</h4>
+        <p>Cooked in limited quantities so nothing sits around.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌿</div>
+        <h4>Honest ingredients</h4>
+        <p>No hidden maida in masalas. I read every label.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📦</div>
+        <h4>Hygienic packing</h4>
+        <p>Hot food is cooled slightly and packed clean and tight.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛵</div>
+        <h4>Local delivery</h4>
+        <p>Delivered around Auroville and nearby areas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>How ordering works</h2>
+      <p>Three simple steps from craving to eating.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Choose your favourites</h4>
+        <p>Browse the menu and pick your dishes. All meals need 24 hours notice.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Message on WhatsApp</h4>
+        <p>Share your date, quantity, and dietary needs — vegan, GF, or both.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Enjoy it fresh</h4>
+        <p>Collect or get it delivered during your chosen time slot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonial-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>What guests say</h2>
+    </div>
+  </div>
+  <div class="testimonial-marquee reveal">
+    <div class="testimonial-track">
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">😊</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Loved the podi and button idlis!!!</q>
+          <div class="name">Shashwati · Auroville</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🥣</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Pumpkin soup and avocado toast are a must-try!</q>
+          <div class="name">Nukhalu · Auroville</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🌿</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Finally a kitchen that takes gluten-free seriously without making the food boring.</q>
+          <div class="name">Mark · Kuilyapalayam</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🐟</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Best fish thali I have had in a while! Fresh, light, and genuinely homemade.</q>
+          <div class="name">Prema · Chennai</div>
+        </div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">😊</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Loved the podi and button idlis!!!</q>
+          <div class="name">Shashwati · Auroville</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🥣</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Pumpkin soup and avocado toast are a must-try!</q>
+          <div class="name">Nukhalu · Auroville</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🌿</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Finally a kitchen that takes gluten-free seriously without making the food boring.</q>
+          <div class="name">Mark · Kuilyapalayam</div>
+        </div>
+      </div>
+      <div class="testimonial-float">
+        <div class="testimonial-avatar">🐟</div>
+        <div>
+          <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:6px;">★★★★★</div>
+          <q>Best fish thali I have had in a while! Fresh, light, and genuinely homemade.</q>
+          <div class="name">Prema · Chennai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whatsapp-section" id="contact">
+  <div class="container">
+    <h2 class="reveal">Pre-order your meal on WhatsApp.</h2>
+    <p class="reveal">Every dish is made fresh in small batches. Tell us what you'd like, pick your time, and we'll have it ready — breakfast, lunch, dinner, or a full thali.</p>
+    <div class="preorder-time reveal">
+      <label for="preorderDate">Preferred date</label>
+      <input type="date" id="preorderDate">
+      <label for="preorderTime">Preferred time</label>
+      <select id="preorderTime">
+        <option value="">Select a slot</option>
+        <option value="Breakfast: 9–10 AM">Breakfast: 9–10 AM</option>
+        <option value="Lunch: 12–2 PM">Lunch: 12–2 PM</option>
+        <option value="Dinner: 6–8 PM">Dinner: 6–8 PM</option>
+      </select>
+      <label for="preorderNotes">Notes (allergies, GF, vegan)</label>
+      <textarea id="preorderNotes" rows="2" placeholder="e.g. gluten-free, no garlic, 2 guests..."></textarea>
+    </div>
+    <button class="whatsapp-btn reveal" id="finalCartBtn">Pre-order now</button>
+    <div class="preorder-cart reveal" id="preorderCart">
+      <div class="preorder-cart-header">
+        <h4>Your pre-order</h4>
+        <a href="#menu" class="preorder-add-more">+ Add more items</a>
+      </div>
+      <div class="preorder-cart-empty" id="preorderCartEmpty">Your cart is empty. Add dishes above to build your order.</div>
+      <div id="preorderCartItems"></div>
+      <div class="preorder-cart-total" id="preorderCartTotal" style="display:none;">
+        <span>Subtotal</span>
+        <span id="preorderCartSubtotal">₹0</span>
+      </div>
+      <p class="preorder-cart-note" id="preorderCartNote" style="display:none;">Prices are indicative. Final total confirmed on WhatsApp. 24-hour pre-booking required.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Ritu's Kitchen</a>
+        <p>Homely Indian food cooked fresh in small batches. Pre-booking only. Gluten-free and vegan options available.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a>
+        <a href="#thali">Thali</a>
+        <a href="#how">How It Works</a>
+        <a href="#about">About</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Delivery Policy</a>
+        <a href="#">Cancellation</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📱 WhatsApp: <a href="https://wa.me/919043140686" target="_blank" rel="noopener">Message on WhatsApp</a></p>
+        <p>📍 Auroville, Tamil Nadu</p>
+        <p>🕒 Kitchen hours: 7 AM – 8 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Ritu's Kitchen. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+<div class="jazz-player" id="jazzPlayer">
+  <button id="jazzToggle" aria-label="Play jazz ambience">▶</button>
+  <span>Jazz ambience</span>
+  <audio id="jazzAudio" loop preload="metadata" controls style="width:180px;height:28px;">
+    <source src="images/jazz-ambience.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button class="close-jazz" id="jazzClose" aria-label="Close jazz player">✕</button>
+</div>
+
+<!-- Cart drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your pre-order</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Your cart is empty.</p>
+      <p style="font-size:13px; margin-top:8px;">Add breakfast, thali, soups, or desserts to pre-order.</p>
+    </div>
+    <div id="cartItems"></div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">₹0</span>
+    </div>
+    <p class="cart-note">Prices are indicative. Final total confirmed on WhatsApp. 24-hour pre-booking required.</p>
+    <button class="cart-checkout" id="cartCheckout">Place order on WhatsApp</button>
+  </div>
+</div>
+
+<!-- Mini floating cart -->
+<div class="mini-cart" id="miniCart">
+  <div class="mini-cart-count" id="miniCartCount">0</div>
+  <div class="mini-cart-info">
+    <div class="mini-cart-total" id="miniCartTotal">₹0</div>
+    <div class="mini-cart-note">Tap to review & pre-order</div>
+  </div>
+  <button class="mini-cart-btn" id="miniCartBtn">Review</button>
+</div>
+
+<div class="sticky-cta">
+  <a href="tel:+919****0686" class="btn btn-secondary">Call</a>
+  <button class="btn btn-primary" id="stickyCartBtn">Pre-order now</button>
+</div>
+
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+}, { passive: true });
+
+const menuOpen = document.getElementById('menuOpen');
+const menuClose = document.getElementById('menuClose');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+function openMenu() { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+menuOpen.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+mobileOverlay.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+const thaliCards = document.querySelectorAll('.thali-card');
+thaliCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.add-to-cart')) return;
+    thaliCards.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+  });
+});
+
+// Add js-on class only if GSAP loads successfully
+if (typeof gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('js-on');
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to('.hero-bg', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.utils.toArray('.reveal').forEach(el => {
+    gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+  });
+  gsap.utils.toArray('.dish-card').forEach((card, i) => {
+    gsap.fromTo(card, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, delay: (i % 2) * 0.12, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 85%', once: true } });
+  });
+  gsap.utils.toArray('.thali-item').forEach((item, i) => {
+    gsap.fromTo(item, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, delay: i * 0.1, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.thali-plate', start: 'top 75%', once: true } });
+  });
+  gsap.fromTo('.value-card', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power2.out', scrollTrigger: { trigger: '.values-grid', start: 'top 80%', once: true } });
+  gsap.fromTo('.step', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.steps', start: 'top 80%', once: true } });
+}
+
+// Cart state
+let cart = JSON.parse(localStorage.getItem('rituCart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('rituCart', JSON.stringify(cart));
+  renderCart();
+}
+
+function updateCount() {
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+  const badge = document.getElementById('cartCount');
+  if (badge) {
+    badge.textContent = count;
+    badge.style.display = count > 0 ? 'grid' : 'none';
+  }
+
+  const miniCart = document.getElementById('miniCart');
+  const miniCount = document.getElementById('miniCartCount');
+  const miniTotal = document.getElementById('miniCartTotal');
+  if (miniCart) {
+    if (count > 0) {
+      miniCart.classList.add('has-items');
+      if (miniCount) miniCount.textContent = count;
+      if (miniTotal) miniTotal.textContent = formatPrice(subtotal);
+    } else {
+      miniCart.classList.remove('has-items');
+    }
+  }
+}
+
+function formatPrice(n) {
+  return '₹' + n.toLocaleString('en-IN');
+}
+
+function renderCart() {
+  const itemsContainer = document.getElementById('cartItems');
+  const emptyEl = document.getElementById('cartEmpty');
+  const footer = document.getElementById('cartFooter');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const preorderEmpty = document.getElementById('preorderCartEmpty');
+  const preorderItems = document.getElementById('preorderCartItems');
+  const preorderTotal = document.getElementById('preorderCartTotal');
+  const preorderSubtotal = document.getElementById('preorderCartSubtotal');
+  const preorderNote = document.getElementById('preorderCartNote');
+  if (!itemsContainer) return;
+
+  updateCount();
+
+  let total = 0;
+  const cartHtml = cart.map((item, index) => {
+    total += item.price * item.qty;
+    const priceLine = item.price > 0 ? `<div class="cart-item-price">${formatPrice(item.price)}</div>` : `<div class="cart-item-price" style="color:var(--muted);">Preference</div>`;
+    return `
+      <div class="cart-item">
+        <div class="cart-item-thumb">${item.emoji || '🍽️'}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          ${priceLine}
+          <div class="cart-item-controls">
+            <button onclick="changeQty(${index}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+          <button class="cart-item-remove" onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const preorderHtml = cart.map((item, index) => {
+    const lineTotal = item.price * item.qty;
+    const priceLine = item.price > 0
+      ? `<div class="preorder-cart-item-meta">${item.qty} × ${formatPrice(item.price)}</div>`
+      : '';
+    const totalLine = lineTotal > 0 ? `<div class="preorder-cart-item-name">${formatPrice(lineTotal)}</div>` : `<div class="preorder-cart-item-name" style="color:var(--muted);font-weight:500;">Preference</div>`;
+    return `
+      <div class="preorder-cart-item">
+        <div>
+          <div class="preorder-cart-item-name">${item.emoji || '🍽️'} ${item.name}</div>
+          ${priceLine}
+          <button class="preorder-cart-remove" onclick="removeItem(${index})">Remove</button>
+        </div>
+        ${totalLine}
+      </div>
+    `;
+  }).join('');
+
+  if (cart.length === 0) {
+    itemsContainer.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = 'block';
+    if (footer) footer.style.display = 'none';
+    if (preorderEmpty) preorderEmpty.style.display = 'block';
+    if (preorderItems) preorderItems.innerHTML = '';
+    if (preorderTotal) preorderTotal.style.display = 'none';
+    if (preorderNote) preorderNote.style.display = 'none';
+  } else {
+    if (emptyEl) emptyEl.style.display = 'none';
+    if (footer) footer.style.display = 'block';
+    itemsContainer.innerHTML = cartHtml;
+    if (subtotalEl) subtotalEl.textContent = formatPrice(total);
+
+    if (preorderEmpty) preorderEmpty.style.display = 'none';
+    if (preorderItems) preorderItems.innerHTML = preorderHtml;
+    if (preorderSubtotal) preorderSubtotal.textContent = formatPrice(total);
+    if (preorderTotal) preorderTotal.style.display = 'flex';
+    if (preorderNote) preorderNote.style.display = 'block';
+  }
+}
+
+function changeQty(index, delta) {
+  cart[index].qty += delta;
+  if (cart[index].qty <= 0) cart.splice(index, 1);
+  saveCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  saveCart();
+}
+
+function addToCartQty(name, price, qty) {
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ name, price: price, qty: qty, emoji: guessEmoji(name) });
+  }
+  saveCart();
+}
+
+function addToCart(name, price) {
+  addToCartQty(name, parseInt(price, 10), 1);
+}
+
+function guessEmoji(name) {
+  const n = name.toLowerCase();
+  if (n.includes('idli')) return '🍘';
+  if (n.includes('poori')) return '🥯';
+  if (n.includes('muesli')) return '🥣';
+  if (n.includes('omelet')) return '🍳';
+  if (n.includes('tea') || n.includes('coffee')) return '☕';
+  if (n.includes('soup')) return '🍲';
+  if (n.includes('potato')) return '🥔';
+  if (n.includes('paneer')) return '🧀';
+  if (n.includes('bread')) return '🍞';
+  if (n.includes('avocado')) return '🥑';
+  if (n.includes('popcorn')) return '🍿';
+  if (n.includes('paysum')) return '🍮';
+  if (n.includes('kadha') || n.includes('halwa')) return '🍯';
+  if (n.includes('thali')) return '🍽️';
+  return '🍽️';
+}
+
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function checkoutWhatsApp() {
+  if (cart.length === 0) return;
+  let total = 0;
+  const lines = cart.map(item => {
+    const lineTotal = item.price * item.qty;
+    total += lineTotal;
+    const valuePart = lineTotal > 0 ? ` = ₹${lineTotal}` : '';
+    return `• ${item.name} x ${item.qty}${valuePart}`;
+  });
+  const totalLine = total > 0 ? `\n\nTotal: ₹${total}` : '';
+
+  const dateVal = document.getElementById('preorderDate')?.value;
+  const timeVal = document.getElementById('preorderTime')?.value;
+  const notesVal = document.getElementById('preorderNotes')?.value?.trim();
+
+  let details = '';
+  if (dateVal) details += `\nPreferred date: ${dateVal}`;
+  if (timeVal) details += `\nPreferred time: ${timeVal}`;
+  if (notesVal) details += `\nNotes: ${notesVal}`;
+
+  const message = 'Hi Ritu, I would like to pre-order:\n\n' + lines.join('\n') + totalLine + details + '\n\nPlease confirm availability. Thanks!';
+  const url = 'https://wa.me/919043140686?text=' + encodeURIComponent(message);
+  window.open(url, '_blank', 'noopener');
+}
+
+// Event delegation for add-to-cart buttons
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.add-to-cart');
+  if (btn && !btn.disabled) {
+    const name = btn.dataset.name;
+    const price = parseInt(btn.dataset.price, 10);
+    let qty = 1;
+    const row = btn.closest('.dish-qty-row');
+    if (row) {
+      const input = row.querySelector('input[type="number"]');
+      if (input) qty = Math.max(1, parseInt(input.value, 10) || 1);
+    }
+    const originalLabel = btn.textContent;
+    addToCartQty(name, price, qty);
+    btn.textContent = 'Added ✓';
+    btn.classList.add('added');
+    setTimeout(() => {
+      btn.textContent = originalLabel;
+      btn.classList.remove('added');
+    }, 1500);
+  }
+});
+
+document.getElementById('cartBtn').addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+document.getElementById('cartClose').addEventListener('click', closeCart);
+document.getElementById('cartOverlay').addEventListener('click', closeCart);
+document.getElementById('stickyCartBtn').addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+const miniCartBtn = document.getElementById('miniCartBtn');
+if (miniCartBtn) miniCartBtn.addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+const heroBtn = document.getElementById('heroPreOrderBtn');
+if (heroBtn) heroBtn.addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+const finalBtn = document.getElementById('finalCartBtn');
+if (finalBtn) finalBtn.addEventListener('click', () => {
+  if (cart.length === 0) {
+    document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  checkoutWhatsApp();
+});
+document.getElementById('cartCheckout').addEventListener('click', checkoutWhatsApp);
+
+// Set default pre-order date to tomorrow
+const dateInput = document.getElementById('preorderDate');
+if (dateInput) {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  dateInput.min = tomorrow.toISOString().split('T')[0];
+}
+
+renderCart();
+
+
+// Jazz ambience toggle
+const jazzAudio = document.getElementById('jazzAudio');
+const jazzToggle = document.getElementById('jazzToggle');
+if (jazzAudio && jazzToggle) {
+  jazzAudio.volume = 0.4;
+  jazzToggle.addEventListener('click', () => {
+    if (jazzAudio.paused) {
+      jazzAudio.load();
+      const playPromise = jazzAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          jazzToggle.textContent = '⏸';
+          jazzToggle.setAttribute('aria-label', 'Pause jazz ambience');
+        }).catch(err => {
+          console.log('Audio playback failed:', err);
+          alert('Could not play audio. Tap the button again, or check your browser sound settings.');
+        });
+      }
+    } else {
+      jazzAudio.pause();
+      jazzToggle.textContent = '▶';
+      jazzToggle.setAttribute('aria-label', 'Play jazz ambience');
+    }
+  });
+}
+
+const jazzClose = document.getElementById('jazzClose');
+if (jazzClose && jazzAudio) {
+  jazzClose.addEventListener('click', () => {
+    jazzAudio.pause();
+    document.getElementById('jazzPlayer').classList.add('hidden');
+  });
+}
+
+</script>
+
+</body>
+</html>
