@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ritu's Kitchen — Homely food, away from home</title>
 <meta name="description" content="Home-cooked Indian meals in Auroville. Pre-booking only. Gluten-free, vegan, and full-of-love options. WhatsApp 90431 40686.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -326,7 +334,7 @@ section { position: relative; padding: 100px 0; }
 .thali-section h2 { color: #fff; }
 .thali-section .section-header p { color: rgba(255,255,255,0.8); }
 .thali-plate {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto 48px;
   background: rgba(255,255,255,0.08);
   border: 2px dashed rgba(255,255,255,0.25);
@@ -336,17 +344,20 @@ section { position: relative; padding: 100px 0; }
   display: grid;
   place-items: center;
 }
-.thali-center { text-align: center; }
-.thali-center h3 { color: #fff; font-size: 28px; margin-bottom: 8px; }
-.thali-center p { color: rgba(255,255,255,0.75); margin: 0; font-size: 14px; }
+.thali-center { text-align: center; max-width: 160px; z-index: 1; }
+.thali-center h3 { color: #fff; font-size: 26px; margin-bottom: 8px; }
+.thali-center p { color: rgba(255,255,255,0.75); margin: 0; font-size: 13px; }
 .thali-item {
   position: absolute;
   text-align: center;
-  width: 120px;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.thali-item img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; border: 3px solid #fff; }
-.thali-item span { color: #fff; font-size: 13px; font-weight: 600; display: block; }
-.thali-item small { color: rgba(255,255,255,0.75); font-size: 11px; }
+.thali-item img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 3px solid #fff; box-sizing: border-box; }
+.thali-item span { color: #fff; font-size: 13px; font-weight: 600; display: block; line-height: 1.2; }
+.thali-item small { color: rgba(255,255,255,0.75); font-size: 11px; display: block; line-height: 1.2; margin-top: 2px; }
 .thali-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
 .thali-card {
   background: rgba(255,255,255,0.1);
@@ -1017,7 +1028,7 @@ section { position: relative; padding: 100px 0; }
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="header-cta">Pre-order now</a>
+    <a href="order.html" class="header-cta">Order now</a>
     <a href="#" class="cart-icon" id="cartBtn" aria-label="Open cart">🛒<span class="cart-badge" id="cartCount">0</span></a>
     <button class="mobile-toggle" id="menuOpen" aria-label="Open menu">☰</button>
   </div>
@@ -1031,7 +1042,7 @@ section { position: relative; padding: 100px 0; }
   <a href="#how">How It Works</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
-  <a href="https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+  <a href="order.html" class="btn btn-primary" style="display:block; margin-top: 16px; text-align:center;">Order now</a>
 </div>
 
 <main>
@@ -1044,7 +1055,7 @@ section { position: relative; padding: 100px 0; }
       <h1 class="reveal">Homely food, away from home.</h1>
       <p class="reveal">Where gluten-free, vegan, and full-of-love meet. Fresh, seasonal meals cooked like I cook for my own family.</p>
       <div class="reveal">
-        <button class="btn btn-primary" id="heroPreOrderBtn">Pre-order now</button>
+        <a href="order.html" class="btn btn-primary">Order now</a>
         <a href="#menu" class="btn btn-secondary" style="margin-left:12px;">Explore today's menu</a>
       </div>
       <div class="hero-trust reveal">
@@ -1341,33 +1352,33 @@ section { position: relative; padding: 100px 0; }
         <h3>Thali Like Home</h3>
         <p>Sabji · Dal · Rice · Roti · Salad · Sweet</p>
       </div>
-      <div class="thali-item" style="top:8%; left:50%; transform:translateX(-50%);">
+      <div class="thali-item" style="left:50%; top:10%; transform:translate(-50%,-50%);">
         <img src="images/ritu-seasonal-sabji.jpg" alt="Sabji">
         <span>Sabji</span>
         <small>Seasonal · GF</small>
       </div>
-      <div class="thali-item" style="top:30%; right:5%;">
+      <div class="thali-item" style="left:84%; top:26%; transform:translate(-50%,-50%);">
         <img src="images/ritu-dal-tadka.jpg" alt="Dal">
         <span>Dal</span>
         <small>Daily tadka · GF</small>
       </div>
-      <div class="thali-item" style="bottom:30%; right:5%;">
+      <div class="thali-item" style="left:84%; top:74%; transform:translate(-50%,-50%);">
         <img src="images/ritu-jeera-rice.jpg" alt="Rice">
         <span>Rice</span>
         <small>Ghee / Jeera · GF</small>
       </div>
-      <div class="thali-item" style="bottom:8%; left:50%; transform:translateX(-50%);">
+      <div class="thali-item" style="left:50%; top:90%; transform:translate(-50%,-50%);">
         <img src="images/ritu-jowar-roti.jpg" alt="Roti">
         <span>Roti</span>
         <small>Wheat · Millet swap</small>
       </div>
-      <div class="thali-item" style="bottom:30%; left:5%;">
+      <div class="thali-item" style="left:16%; top:74%; transform:translate(-50%,-50%);">
         <img src="images/ritu-paysum.jpg" alt="Sweet">
         <span>Sweet</span>
         <small>Paysum / Kadha Prashad</small>
       </div>
-      <div class="thali-item" style="top:30%; left:5%;">
-        <img src="images/ritu-thali-salad.jpg" alt="Salad" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 8px;border:3px solid #fff;">
+      <div class="thali-item" style="left:16%; top:26%; transform:translate(-50%,-50%);">
+        <img src="images/ritu-thali-salad.jpg" alt="Salad">
         <span>Salad</span>
         <small>Fresh crunch</small>
       </div>
@@ -1571,7 +1582,7 @@ section { position: relative; padding: 100px 0; }
       <label for="preorderNotes">Notes (allergies, GF, vegan)</label>
       <textarea id="preorderNotes" rows="2" placeholder="e.g. gluten-free, no garlic, 2 guests..."></textarea>
     </div>
-    <button class="whatsapp-btn reveal" id="finalCartBtn">Pre-order now</button>
+    <button class="whatsapp-btn reveal" onclick="window.location.href='order.html'">Order now</button>
     <div class="preorder-cart reveal" id="preorderCart">
       <div class="preorder-cart-header">
         <h4>Your pre-order</h4>
@@ -1605,15 +1616,16 @@ section { position: relative; padding: 100px 0; }
         <a href="#about">About</a>
       </div>
       <div>
-        <h4>Help</h4>
+        <h4>Customer</h4>
+        <a href="order-history.html">My Order History</a>
+        <a href="https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a href="#">Feedback</a>
         <a href="#">FAQ</a>
-        <a href="#">Delivery Policy</a>
-        <a href="#">Cancellation</a>
-        <a href="#">Privacy</a>
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p>📱 WhatsApp: <a href="https://wa.me/919043140686" target="_blank" rel="noopener">Message on WhatsApp</a></p>
+        <p>📱 WhatsApp: <a href="https://wa.me/919043140686" target="_blank" rel="noopener">Message on WhatsApp</a> | <a href="order.html">Order online</a></p>
+        <p>📧 Email: <a href="mailto:rituskitchen.av@gmail.com">rituskitchen.av@gmail.com</a></p>
         <p>📍 Auroville, Tamil Nadu</p>
         <p>🕒 Kitchen hours: 7 AM – 8 PM</p>
       </div>
@@ -1672,7 +1684,7 @@ section { position: relative; padding: 100px 0; }
 
 <div class="sticky-cta">
   <a href="tel:+919****0686" class="btn btn-secondary">Call</a>
-  <button class="btn btn-primary" id="stickyCartBtn">Pre-order now</button>
+  <button class="btn btn-primary" id="stickyCartBtn" onclick="window.location.href='order.html'">Order now</button>
 </div>
 
 

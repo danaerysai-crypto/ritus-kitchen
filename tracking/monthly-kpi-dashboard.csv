@@ -1,0 +1,14 @@
+Metric,January,February,March,Target,How to Calculate
+Website visitors,0,0,0,500,Google Analytics 4
+WhatsApp inquiries,0,0,0,60,Count from order log
+Inquiry to order conversion rate (%),0,0,0,40,Orders / Inquiries x 100
+New customers,0,0,0,25,Unique first-time customers in order log
+Repeat customers (%),0,0,0,45,Repeat customers / Total customers x 100
+Google reviews,0,0,0,50,Google Business Profile
+Instagram followers,0,0,0,500,Instagram Insights
+Weekly tiffin subscribers,0,0,0,25,Order log product = Weekly Tiffin
+Average order value (₹),0,0,0,320,Total revenue / Total orders
+Total revenue (₹),0,0,0,50000,Sum of Price column
+Cost per new customer (₹),0,0,0,0,Total marketing spend / New customers
+Top performing source,-,-,-,-,Filter order log by Source
+Top performing product,-,-,-,-,Filter order log by Product

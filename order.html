@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Thali — Ritu's Kitchen</title>
+<meta name="description" content="Pre-book your home-cooked thali from Ritu's Kitchen. Today's menu, dietary options, and delivery in Auroville.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<style>
+:root {
+  --green: #244A36;
+  --green-dark: #183528;
+  --cream: #FFF8ED;
+  --cream-soft: #F7EEDC;
+  --terracotta: #C8663D;
+  --gold: #D99B36;
+  --ink: #1F2421;
+  --body: #4C544F;
+  --muted: #727A75;
+  --border: #E4DED2;
+  --surface: #FFFFFF;
+  --success: #2E7D4F;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--body);
+  background: var(--cream);
+  line-height: 1.65;
+}
+h1, h2, h3 { margin: 0; color: var(--ink); }
+.container { max-width: 720px; margin: 0 auto; padding: 24px; }
+header {
+  background: var(--green);
+  color: white;
+  padding: 28px 24px;
+  text-align: center;
+}
+header h1 { color: white; font-family: Georgia, serif; font-size: 26px; margin-bottom: 6px; }
+header p { margin: 0; opacity: 0.9; font-size: 14px; }
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 18px rgba(31,36,33,0.06);
+}
+.form-group { margin-bottom: 18px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--ink); font-size: 14px; }
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+textarea { min-height: 80px; resize: vertical; }
+.checkbox-group, .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.checkbox-group label, .radio-group label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cream-soft);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.checkbox-group input, .radio-group input {
+  width: auto;
+  margin: 0;
+}
+.price-display {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green);
+}
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover { background: var(--green-dark); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+.success-msg {
+  display: none;
+  background: var(--cream-soft);
+  border: 1px solid var(--success);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.success-msg h2 { color: var(--success); margin-bottom: 8px; }
+.whatsapp-fallback {
+  text-align: center;
+  margin-top: 16px;
+}
+.whatsapp-fallback a {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.privacy-note {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 12px;
+}
+@media (max-width: 480px) {
+  .container { padding: 16px; }
+  .card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Ritu's Kitchen</h1>
+    <p>Home-cooked thalis in Auroville — pre-book now</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card" id="menu-card">
+    <h2 style="margin-bottom: 10px;">🍛 Today's Thali</h2>
+    <p style="margin:0 0 14px; color: var(--muted); font-size: 14px;">Menu changes daily. Fresh, home-cooked, delivered.</p>
+    <div style="background: var(--cream-soft); border-radius: 10px; padding: 16px; margin-bottom: 14px;">
+      <p style="margin:0; font-weight: 600; color: var(--ink);">Today's menu: [Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]</p>
+    </div>
+    <div class="price-display">₹220</div>
+    <p style="margin:6px 0 0; font-size: 13px; color: var(--muted);">Delivery included within Auroville. Pre-book by 11 AM for lunch, 6 PM for dinner.</p>
+  </div>
+
+  <form id="orderForm" class="card">
+    <h3 style="margin-bottom: 16px;">Your Order</h3>
+
+    <div class="form-group">
+      <label for="name">Your Name *</label>
+      <input type="text" id="name" name="name" required placeholder="e.g. Priya">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">WhatsApp Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required placeholder="98765 43210" maxlength="15">
+    </div>
+
+    <div class="form-group">
+      <label for="area">Where should we deliver? *</label>
+      <input type="text" id="area" name="area" required placeholder="Guesthouse name / area in Auroville">
+    </div>
+
+    <div class="form-group">
+      <label>Meal need *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="meal" value="Lunch" required checked> Lunch</label>
+        <label><input type="radio" name="meal" value="Dinner"> Dinner</label>
+        <label><input type="radio" name="meal" value="Both"> Both</label>
+        <label><input type="radio" name="meal" value="Weekly Tiffin"> Weekly Tiffin</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="quantity" value="1" required checked> 1 person</label>
+        <label><input type="radio" name="quantity" value="2"> 2 people</label>
+        <label><input type="radio" name="quantity" value="3-4"> 3–4 people</label>
+        <label><input type="radio" name="quantity" value="5+"> 5+ people</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Dietary needs (optional)</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="dietary" value="Vegan"> Vegan</label>
+        <label><input type="checkbox" name="dietary" value="Gluten-free"> Gluten-free</label>
+        <label><input type="checkbox" name="dietary" value="No onion-garlic"> No onion-garlic</label>
+        <label><input type="checkbox" name="dietary" value="Low-oil"> Low-oil</label>
+        <label><input type="checkbox" name="dietary" value="Mild spice"> Mild spice</label>
+        <label><input type="checkbox" name="dietary" value="Diabetic-friendly"> Diabetic-friendly</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="source">How did you hear about us? *</label>
+      <select id="source" name="source" required>
+        <option value="" disabled selected>Select one...</option>
+        <option value="WhatsApp Group">WhatsApp Group</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Google Search">Google Search</option>
+        <option value="Friend Referral">Friend / Referral</option>
+        <option value="Guesthouse">Guesthouse</option>
+        <option value="Auroville Notice Board">Auroville Notice Board</option>
+        <option value="Auroville Today / Radio">Auroville Today / Radio</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="referrer-group" style="display:none;">
+      <label for="referrer">Who referred you?</label>
+      <input type="text" id="referrer" name="referrer" placeholder="Name of person who referred you">
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Anything else? (optional)</label>
+      <textarea id="notes" name="notes" placeholder="Delivery time preference, allergies, special request..."></textarea>
+    </div>
+
+    <button type="submit" id="submitBtn">Confirm Order on WhatsApp</button>
+    <p class="privacy-note">By ordering, you agree to share this info for order fulfilment only.</p>
+  </form>
+
+  <div class="card success-msg" id="successMsg">
+    <h2>Order request received! 🎉</h2>
+    <p>Ritu will confirm on WhatsApp shortly.</p>
+    <div class="whatsapp-fallback" id="whatsappFallback"></div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <p style="margin:0; color: var(--muted);">
+      🏠 <a href="index.html" style="color: var(--green);">Back to Home</a> | 
+      📜 <a href="order-history.html" style="color: var(--green);">My Order History</a> | 
+      📧 <a href="mailto:rituskitchen.av@gmail.com" style="color: var(--green);">rituskitchen.av@gmail.com</a>
+    </p>
+  </div>
+
+</div>
+
+<script>
+const sourceSelect = document.getElementById('source');
+const referrerGroup = document.getElementById('referrer-group');
+
+sourceSelect.addEventListener('change', function() {
+  referrerGroup.style.display = this.value === 'Friend Referral' ? 'block' : 'none';
+});
+
+const form = document.getElementById('orderForm');
+const submitBtn = document.getElementById('submitBtn');
+const successMsg = document.getElementById('successMsg');
+const whatsappFallback = document.getElementById('whatsappFallback');
+
+// Replace these with your actual Google Form field IDs after creating the form
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+const GOOGLE_FORM_FIELDS = {
+  name: 'entry.1234567890',
+  phone: 'entry.1234567891',
+  area: 'entry.1234567892',
+  meal: 'entry.1234567893',
+  quantity: 'entry.1234567894',
+  dietary: 'entry.1234567895',
+  source: 'entry.1234567896',
+  referrer: 'entry.1234567897',
+  notes: 'entry.1234567898'
+};
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  const formData = new FormData(form);
+  const data = {
+    name: formData.get('name'),
+    phone: formData.get('phone'),
+    area: formData.get('area'),
+    meal: formData.get('meal'),
+    quantity: formData.get('quantity'),
+    dietary: Array.from(form.querySelectorAll('input[name="dietary"]:checked')).map(cb => cb.value).join(', ') || 'None',
+    source: formData.get('source'),
+    referrer: formData.get('referrer') || '',
+    notes: formData.get('notes') || ''
+  };
+
+  // Try to submit to Google Form silently
+  const googleFormData = new FormData();
+  for (const [key, fieldName] of Object.entries(GOOGLE_FORM_FIELDS)) {
+    googleFormData.append(fieldName, data[key]);
+  }
+
+  fetch(GOOGLE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: googleFormData
+  }).catch(() => {}); // Silently fail; WhatsApp is the real order channel
+
+  // Also save to localStorage for order history demo
+  let orders = JSON.parse(localStorage.getItem('ritu_orders') || '[]');
+  orders.push({
+    date: new Date().toISOString().split('T')[0],
+    customer: data.name,
+    phone: data.phone,
+    product: data.meal === 'Weekly Tiffin' ? 'Weekly Tiffin' : "Today's Thali",
+    price: data.meal === 'Weekly Tiffin' ? 1100 : (data.meal === 'Both' ? 440 : 220),
+    area: data.area
+  });
+  localStorage.setItem('ritu_orders', JSON.stringify(orders));
+
+  // Build WhatsApp confirmation message
+  const message = encodeURIComponent(
+    `Hi Ritu, I'd like to order:\n` +
+    `Name: ${data.name}\n` +
+    `Phone: ${data.phone}\n` +
+    `Meal: ${data.meal}\n` +
+    `Quantity: ${data.quantity}\n` +
+    `Deliver to: ${data.area}\n` +
+    `Dietary: ${data.dietary}\n` +
+    `Heard from: ${data.source}${data.referrer ? ' (ref: ' + data.referrer + ')' : ''}\n` +
+    `Notes: ${data.notes || 'None'}`
+  );
+
+  const whatsappUrl = `https://wa.me/919043140686?text=${message}`;
+
+  // Show success
+  form.style.display = 'none';
+  successMsg.style.display = 'block';
+  whatsappFallback.innerHTML = `<a href="${whatsappUrl}" target="_blank" rel="noopener">Open WhatsApp to Confirm</a>`;
+
+  // Auto-open WhatsApp on mobile/desktop
+  window.open(whatsappUrl, '_blank');
+
+  gtag && gtag('event', 'order_form_submit', {
+    event_category: 'order',
+    event_label: data.source,
+    value: data.meal === 'Weekly Tiffin' ? 1100 : (data.meal === 'Both' ? 440 : 220),
+    currency: 'INR'
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Log Order | Ritu's Kitchen</title>
+<meta name="description" content="Ritu's Kitchen admin page for logging orders from phone or laptop.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<style>
+:root {
+  --green: #244A36;
+  --green-dark: #183528;
+  --cream: #FFF8ED;
+  --cream-soft: #F7EEDC;
+  --terracotta: #C8663D;
+  --gold: #D99B36;
+  --ink: #1F2421;
+  --body: #4C544F;
+  --muted: #727A75;
+  --border: #E4DED2;
+  --surface: #FFFFFF;
+  --success: #2E7D4F;
+  --danger: #B23A3A;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--body);
+  background: var(--cream);
+  line-height: 1.65;
+}
+h1, h2, h3 { margin: 0; color: var(--ink); }
+.container { max-width: 720px; margin: 0 auto; padding: 20px; }
+header {
+  background: var(--green);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 { color: white; font-size: 22px; margin-bottom: 4px; }
+header p { margin: 0; font-size: 13px; opacity: 0.9; }
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(31,36,33,0.06);
+}
+.form-group { margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; color: var(--ink); }
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+}
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+button.secondary { background: var(--terracotta); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+.success {
+  background: #e8f5e9;
+  border: 1px solid var(--success);
+  color: var(--green-dark);
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: none;
+}
+.error {
+  background: #ffebee;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: none;
+}
+.order-list { font-size: 14px; }
+.order-list table { width: 100%; border-collapse: collapse; }
+.order-list th, .order-list td { padding: 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.order-list th { background: var(--cream-soft); }
+.login {
+  text-align: center;
+  padding: 40px 20px;
+}
+.login input {
+  max-width: 280px;
+  margin: 0 auto 12px;
+  display: block;
+}
+.hidden { display: none; }
+.pin-hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
+@media (max-width: 480px) {
+  .container { padding: 12px; }
+  .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Ritu's Kitchen Admin</h1>
+    <p>Log orders fast from your phone</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Simple PIN login -->
+  <div class="card login" id="loginCard">
+    <h2 style="margin-bottom: 12px;">Enter admin PIN</h2>
+    <input type="password" id="pinInput" placeholder="4-digit PIN" maxlength="4">
+    <button onclick="login()">Unlock</button>
+    <p class="pin-hint">Default PIN: 1234. Change in code before going live.</p>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <div class="success" id="successMsg">Order logged! Saved locally and copied to clipboard.</div>
+    <div class="error" id="errorMsg">Please fill name, phone, and product.</div>
+
+    <form id="orderForm" class="card">
+      <h3 style="margin-bottom: 14px;">Log New Order</h3>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Customer Name</label>
+        <input type="text" id="name" name="name" placeholder="Priya" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="9876543210" required>
+      </div>
+
+      <div class="form-group">
+        <label for="source">Source</label>
+        <select id="source" name="source" required>
+          <option value="WhatsApp Direct">WhatsApp Direct</option>
+          <option value="Instagram">Instagram</option>
+          <option value="WhatsApp Group">WhatsApp Group</option>
+          <option value="Google Business">Google Business</option>
+          <option value="Friend Referral">Friend Referral</option>
+          <option value="Guesthouse">Guesthouse</option>
+          <option value="Website Order Form">Website Order Form</option>
+          <option value="Auroville Today / Radio">Auroville Today / Radio</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="utm">UTM / Campaign (optional)</label>
+        <input type="text" id="utm" name="utm" placeholder="e.g. daily_thali_july7">
+      </div>
+
+      <div class="form-group">
+        <label for="product">Product</label>
+        <select id="product" name="product" required>
+          <option value="Today's Thali">Today's Thali — ₹220</option>
+          <option value="Weekly Tiffin">Weekly Tiffin — ₹1,100</option>
+          <option value="Wellness Thali">Wellness Thali — ₹280</option>
+          <option value="Family Thali">Family Thali — ₹400</option>
+          <option value="Newcomer Starter Pack">Newcomer Starter Pack — ₹1,200</option>
+          <option value="Festival Box">Festival Box — ₹450</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="customPriceGroup" style="display:none;">
+        <label for="customPrice">Custom Price (₹)</label>
+        <input type="number" id="customPrice" name="customPrice" placeholder="e.g. 350">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Total Price (₹)</label>
+        <input type="number" id="price" name="price" value="220" required>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Mode</label>
+        <select id="payment" name="payment">
+          <option value="UPI">UPI</option>
+          <option value="Cash">Cash</option>
+          <option value="Google Pay">Google Pay</option>
+          <option value="PhonePe">PhonePe</option>
+          <option value="Paytm">Paytm</option>
+          <option value="Pending">Pending</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="area">Delivery Area / Guesthouse</label>
+        <input type="text" id="area" name="area" placeholder="Verite Guesthouse">
+      </div>
+
+      <div class="form-group">
+        <label for="dietary">Dietary Note</label>
+        <input type="text" id="dietary" name="dietary" placeholder="Vegan, gluten-free, mild spice...">
+      </div>
+
+      <div class="form-group">
+        <label for="newRepeat">New or Repeat</label>
+        <select id="newRepeat" name="newRepeat">
+          <option value="New">New</option>
+          <option value="Repeat">Repeat</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="referrer">Referral By (name)</label>
+        <input type="text" id="referrer" name="referrer" placeholder="Who referred this customer?">
+      </div>
+
+      <div class="form-group">
+        <label for="adminNotes">Admin Notes</label>
+        <input type="text" id="adminNotes" name="adminNotes" placeholder="Any extra note">
+      </div>
+
+      <button type="submit">Save Order</button>
+    </form>
+
+    <div class="card order-list">
+      <h3 style="margin-bottom: 14px;">Today's Logged Orders</h3>
+      <div id="todayOrders"><p style="color:var(--muted);">No orders logged yet today.</p></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom: 14px;">Export Data</h3>
+      <button class="secondary" onclick="exportCSV()">Copy Today's CSV to Clipboard</button>
+      <p class="pin-hint" style="margin-top: 10px;">Paste this directly into your Excel/Google Sheet Orders tab.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const ADMIN_PIN = '1234'; // Change this before going live
+const PRICES = {
+  "Today's Thali": 220,
+  "Weekly Tiffin": 1100,
+  "Wellness Thali": 280,
+  "Family Thali": 400,
+  "Newcomer Starter Pack": 1200,
+  "Festival Box": 450,
+  "Custom": 0
+};
+
+document.getElementById('date').valueAsDate = new Date();
+
+function login() {
+  const pin = document.getElementById('pinInput').value;
+  if (pin === ADMIN_PIN) {
+    document.getElementById('loginCard').classList.add('hidden');
+    document.getElementById('adminPanel').classList.remove('hidden');
+    renderTodayOrders();
+  } else {
+    alert('Wrong PIN');
+  }
+}
+
+const productSelect = document.getElementById('product');
+const customPriceGroup = document.getElementById('customPriceGroup');
+const priceInput = document.getElementById('price');
+const quantityInput = document.getElementById('quantity');
+
+function updatePrice() {
+  const product = productSelect.value;
+  const qty = parseInt(quantityInput.value) || 1;
+  if (product === 'Custom') {
+    customPriceGroup.style.display = 'block';
+    priceInput.value = document.getElementById('customPrice').value * qty || 0;
+  } else {
+    customPriceGroup.style.display = 'none';
+    priceInput.value = (PRICES[product] || 0) * qty;
+  }
+}
+
+productSelect.addEventListener('change', updatePrice);
+quantityInput.addEventListener('input', updatePrice);
+document.getElementById('customPrice').addEventListener('input', updatePrice);
+
+const form = document.getElementById('orderForm');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const product = document.getElementById('product').value;
+  
+  if (!name || !phone || !product) {
+    document.getElementById('errorMsg').style.display = 'block';
+    document.getElementById('successMsg').style.display = 'none';
+    return;
+  }
+  
+  document.getElementById('errorMsg').style.display = 'none';
+  
+  const order = {
+    date: document.getElementById('date').value,
+    name: name,
+    phone: phone,
+    source: document.getElementById('source').value,
+    utm: document.getElementById('utm').value,
+    product: product,
+    quantity: parseInt(document.getElementById('quantity').value) || 1,
+    price: parseInt(document.getElementById('price').value) || 0,
+    payment: document.getElementById('payment').value,
+    area: document.getElementById('area').value,
+    dietary: document.getElementById('dietary').value,
+    newRepeat: document.getElementById('newRepeat').value,
+    referrer: document.getElementById('referrer').value,
+    notes: document.getElementById('adminNotes').value
+  };
+  
+  let orders = JSON.parse(localStorage.getItem('ritu_admin_orders') || '[]');
+  orders.push(order);
+  localStorage.setItem('ritu_admin_orders', JSON.stringify(orders));
+  
+  // Copy CSV row to clipboard
+  const csvRow = [
+    order.date, order.name, order.phone, order.source, order.utm,
+    order.product, order.quantity, order.price, order.payment,
+    order.area, order.dietary, order.newRepeat, order.referrer, order.notes
+  ].join(',');
+  navigator.clipboard.writeText(csvRow).then(() => {}).catch(() => {});
+  
+  document.getElementById('successMsg').style.display = 'block';
+  form.reset();
+  document.getElementById('date').valueAsDate = new Date();
+  updatePrice();
+  renderTodayOrders();
+  
+  gtag && gtag('event', 'admin_order_logged', { event_category: 'admin' });
+});
+
+function renderTodayOrders() {
+  const today = new Date().toISOString().split('T')[0];
+  const orders = JSON.parse(localStorage.getItem('ritu_admin_orders') || '[]');
+  const todayOrders = orders.filter(o => o.date === today).reverse();
+  
+  const container = document.getElementById('todayOrders');
+  if (todayOrders.length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);">No orders logged yet today.</p>';
+    return;
+  }
+  
+  let html = '<table><tr><th>Name</th><th>Product</th><th>Qty</th><th>₹</th><th>Source</th></tr>';
+  todayOrders.forEach(o => {
+    html += `<tr>
+      <td>${o.name}</td>
+      <td>${o.product}</td>
+      <td>${o.quantity}</td>
+      <td>${o.price}</td>
+      <td>${o.source}</td>
+    </tr>`;
+  });
+  html += '</table>';
+  container.innerHTML = html;
+}
+
+function exportCSV() {
+  const today = new Date().toISOString().split('T')[0];
+  const orders = JSON.parse(localStorage.getItem('ritu_admin_orders') || '[]');
+  const todayOrders = orders.filter(o => o.date === today);
+  
+  if (todayOrders.length === 0) {
+    alert('No orders to export today.');
+    return;
+  }
+  
+  const header = 'Date,Customer Name,Phone,Source,UTM Campaign,Product,Quantity,Price,Payment Mode,Delivery Area,Dietary Note,New or Repeat,Referral By,Notes';
+  const rows = todayOrders.map(o => [
+    o.date, o.name, o.phone, o.source, o.utm, o.product, o.quantity, o.price,
+    o.payment, o.area, o.dietary, o.newRepeat, o.referrer, o.notes
+  ].join(','));
+  
+  const csv = [header, ...rows].join('\n');
+  navigator.clipboard.writeText(csv).then(() => {
+    alert('Today\'s CSV copied! Paste into your Orders sheet.');
+  }).catch(() => {
+    alert('Could not copy. Check console for CSV.');
+    console.log(csv);
+  });
+}
+
+// Enter key on PIN
+document.getElementById('pinInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') login();
+});
+</script>
+
+</body>
+</html>
