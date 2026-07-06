@@ -6,3 +6,6 @@ package.json
 Thumbs.db
 ritus-kitchen-deploy.zip
 make-deploy-zip.py
+clean_temp.py
+__pycache__/
+*.pyc
