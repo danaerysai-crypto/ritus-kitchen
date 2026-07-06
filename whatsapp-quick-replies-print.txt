@@ -1,0 +1,57 @@
+Ritu's Kitchen — WhatsApp Quick Replies
+Set up in WhatsApp Business → ⋮ → Business tools → Quick replies
+
+/order
+Hi! 🍛 Order here: https://ritus-kitchen.vercel.app/order.html
+Or reply: name, area, meal (lunch/dinner/both), dietary needs.
+
+/menu
+🍛 Today's Thali — Ritu's Kitchen
+[Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]
+₹220 | Pre-book by 11 AM lunch / 6 PM dinner
+https://ritus-kitchen.vercel.app/order.html
+
+/tiffin
+📅 Weekly Tiffin — 5 meals ₹1,100
+Customizable: vegan, GF, low-oil, mild spice
+https://ritus-kitchen.vercel.app/order.html
+
+/price
+Veg Thali ₹220 | GF ₹250 | Egg ₹320 | Chicken/Fish ₹420
+Breakfast ₹80–180 | Starters ₹120–180
+Delivery included in Auroville.
+
+/hours
+Lunch pre-book by 11 AM
+Dinner pre-book by 6 PM
+Weekly tiffin: order once, 5 meals.
+
+/gf
+🌾 Gluten-free available. Millets, rice, no maida.
+GF thali ₹250. Mention "GF" while ordering.
+
+/vegan
+🌱 Vegan available. No dairy/ghee/honey. Plant-based thalis on request.
+
+/location
+📍 Delivery within Auroville. Share guesthouse/area.
+Outside Auroville? Pickup may be possible.
+
+/pay
+UPI (GPay/PhonePe/Paytm) | Cash on delivery | Bank transfer
+Payment details shared after order confirmation.
+
+/thanks
+Hi {{1}}, hope you enjoyed today's thali! 🍛
+Quick feedback: https://ritus-kitchen.vercel.app/order-history.html
+Thank you! 🙏
+
+/review
+Hi {{1}}! 🙏 A quick Google review helps more Aurovilians find us.
+[Add Google review link]
+Thank you!
+
+/feedback
+Hi {{1}}! Quick 2-tap feedback:
+1. How was your meal? 😍 / 🙂 / 😐
+2. Order again this week? Yes / Maybe / No
