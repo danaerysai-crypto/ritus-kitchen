@@ -4,3 +4,5 @@ package.json
 *.log
 .DS_Store
 Thumbs.db
+ritus-kitchen-deploy.zip
+make-deploy-zip.py
