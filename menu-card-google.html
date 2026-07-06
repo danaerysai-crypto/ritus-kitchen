@@ -75,14 +75,19 @@
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--turmeric), var(--rust));
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 58px;
     box-shadow: 0 8px 22px rgba(0,0,0,0.18);
     border: 4px solid white;
     margin-bottom: 22px;
+    background: white;
+  }
+  .photo-emoji img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .badges {
     display: flex;
@@ -220,7 +225,9 @@
         <div class="promise">Home-cooked thalis delivered in Auroville</div>
       </div>
 
-      <div class="photo-emoji">🍛</div>
+      <div class="photo-emoji">
+        <img src="images/logo-ritus-kitchen-regenerated.png" alt="Ritu's Kitchen logo">
+      </div>
 
       <div class="badges">
         <div class="badge">🌿 Gluten-Free Options</div>

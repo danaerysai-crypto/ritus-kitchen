@@ -13,6 +13,8 @@
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
 </script>
+<link rel="icon" type="image/jpeg" href="images/logo-ritus-kitchen.jpg">
+<link rel="apple-touch-icon" href="images/logo-ritus-kitchen.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -80,7 +82,26 @@ img { max-width: 100%; display: block; }
 }
 .header.scrolled { height: 60px; top: 0; box-shadow: 0 2px 20px rgba(31,36,33,0.06); }
 .header .container { width: 100%; display: flex; align-items: center; justify-content: space-between; }
-.logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; color: var(--green); text-decoration: none; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  color: var(--green);
+  text-decoration: none;
+}
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--terracotta);
+}
+@media (max-width: 768px) {
+  .logo { font-size: 19px; }
+  .logo img { width: 34px; height: 34px; }
+}
 .nav { display: flex; gap: 32px; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; position: relative; }
 .nav a::after { content:''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--terracotta); transition: width 0.2s; }
@@ -1027,7 +1048,10 @@ section { position: relative; padding: 100px 0; }
 
 <header class="header" id="header">
   <div class="container">
-    <a href="#" class="logo">Ritu's Kitchen</a>
+    <a href="#" class="logo">
+      <img src="images/logo-ritus-kitchen-regenerated.png" alt="Ritu's Kitchen logo">
+      <span>Ritu's Kitchen</span>
+    </a>
     <nav class="nav">
       <a href="#menu">Menu</a>
       <a href="#thali">Thali</a>
@@ -1628,7 +1652,10 @@ section { position: relative; padding: 100px 0; }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">Ritu's Kitchen</a>
+        <a href="#" class="logo">
+          <img src="images/logo-ritus-kitchen-regenerated.png" alt="Ritu's Kitchen logo" style="border-color: rgba(255,255,255,0.4);">
+          <span>Ritu's Kitchen</span>
+        </a>
         <p>Homely Indian food cooked fresh in small batches. Pre-booking only. Gluten-free and vegan options available.</p>
       </div>
       <div>
