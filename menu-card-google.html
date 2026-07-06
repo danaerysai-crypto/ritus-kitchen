@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ritu's Kitchen — Google Business Profile Menu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #fffaf2;
+    --ink: #2a1f1a;
+    --rust: #a84a2e;
+    --rust-dark: #7c3320;
+    --turmeric: #d4902b;
+    --curry: #4f6b3a;
+    --cream: #f5e6d3;
+    --muted: #7d6b5e;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #e5ddd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .gbp {
+    width: 1200px;
+    height: 900px;
+    background: var(--bg);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    padding: 44px 54px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gbp::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 8px;
+    background: linear-gradient(90deg, var(--turmeric), var(--rust), var(--curry));
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .brand .tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .brand .promise {
+    font-size: 19px;
+    color: var(--curry);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .photo-emoji {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--turmeric), var(--rust));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    border: 4px solid white;
+    margin-bottom: 22px;
+  }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .badge {
+    background: var(--cream);
+    border: 2px solid var(--turmeric);
+    color: var(--ink);
+    padding: 9px 15px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .quote {
+    margin-top: 24px;
+    background: white;
+    border-left: 5px solid var(--turmeric);
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .quote strong { color: var(--rust); }
+  .contact-box {
+    background: var(--rust);
+    color: white;
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-top: 20px;
+  }
+  .contact-box .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--turmeric-light, #f2c56d);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .contact-box .phone { font-size: 28px; font-weight: 800; }
+  .contact-box .small { font-size: 14px; opacity: 0.92; margin-top: 6px; }
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .panel {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  .panel h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .dish {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eaddcf;
+  }
+  .dish:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .dish-name { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .dish-desc { font-size: 11px; color: var(--muted); }
+  .dish-price {
+    background: var(--turmeric);
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 9px;
+    border-radius: 9px;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+  .thali-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .thali-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 12px 6px;
+  }
+  .thali-card .type { font-size: 12px; font-weight: 700; color: var(--rust); }
+  .thali-card .price { font-size: 20px; font-weight: 900; color: var(--ink); margin-top: 2px; }
+  .footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .cta-top {
+    grid-column: 1 / -1;
+    background: var(--rust);
+    color: white;
+    border-radius: 14px;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .cta-top .big { font-size: 22px; font-weight: 800; }
+  .cta-top .small { font-size: 13px; opacity: 0.92; }
+  .cta-top .arrow { font-size: 26px; }
+</style>
+</head>
+<body>
+
+<div class="gbp">
+  <div class="cta-top">
+    <div>
+      <div class="big">📱 WhatsApp to Pre-Book — +91 90431 40686</div>
+      <div class="small">24 hours notice · Auroville delivery · Share allergies in advance</div>
+    </div>
+    <div class="arrow">→</div>
+  </div>
+
+  <div class="left">
+    <div>
+      <div class="brand">
+        <div class="tagline">Homely Food, Away From Home</div>
+        <h1>Ritu's Kitchen</h1>
+        <div class="promise">Home-cooked thalis delivered in Auroville</div>
+      </div>
+
+      <div class="photo-emoji">🍛</div>
+
+      <div class="badges">
+        <div class="badge">🌿 Gluten-Free Options</div>
+        <div class="badge">🥗 Vegan Friendly</div>
+        <div class="badge">❤️ Made with Love</div>
+        <div class="badge">🚚 Auroville Delivery</div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>Hi, I'm Ritu.</strong> I cook what I would serve my own family — fresh, seasonal, no shortcuts. Vegan, gluten-free, no onion-garlic, and diabetic-friendly options available. Just tell me what you need when you book.
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="panel">
+      <h2>⭐ Lunch & Dinner Thali</h2>
+      <div class="thali-row">
+        <div class="thali-card"><div class="type">Veg</div><div class="price">₹220</div></div>
+        <div class="thali-card"><div class="type">Gluten-Free</div><div class="price">₹250</div></div>
+        <div class="thali-card"><div class="type">Egg</div><div class="price">₹320</div></div>
+        <div class="thali-card"><div class="type">Chicken/Fish</div><div class="price">₹420</div></div>
+      </div>
+      <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-align: center;">Sabji + Dal + Rice + Roti · GF roti or extra rice · No-ghee vegan option</p>
+    </div>
+
+    <div class="panel">
+      <h2>☀️ Breakfast</h2>
+      <div class="dish"><div><div class="dish-name">Idli Sambar Chutney</div><div class="dish-desc">GF · Vegan · Freshly ground batter</div></div><div class="dish-price">₹110</div></div>
+      <div class="dish"><div><div class="dish-name">Poori Bhaaji</div><div class="dish-desc">GF jowar-bajra puris available</div></div><div class="dish-price">₹120</div></div>
+      <div class="dish"><div><div class="dish-name">Muesli Bowl</div><div class="dish-desc">Oats, jaggery, seeds, choice of milk</div></div><div class="dish-price">₹110</div></div>
+      <div class="dish"><div><div class="dish-name">Omelet & Bread</div><div class="dish-desc">Farm-fresh country eggs</div></div><div class="dish-price">₹140</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>🍛 Starters, Soups & Sweet Endings</h2>
+      <div class="dish"><div><div class="dish-name">Honey Chilli Potato · Paneer Tikka · Cheese Garlic Bread</div><div class="dish-desc">GF and vegan swaps available · ₹130 each</div></div><div class="dish-price">₹130</div></div>
+      <div class="dish"><div><div class="dish-name">Soup of the Day</div><div class="dish-desc">Pumpkin, broccoli, mushroom — all GF</div></div><div class="dish-price">₹110</div></div>
+      <div class="dish"><div><div class="dish-name">Paysum · Kadha Prashad · Tea / Coffee</div><div class="dish-desc">GF options · Vegan options</div></div><div class="dish-price">₹49-90</div></div>
+    </div>
+  </div>
+
+  <div class="footer">Pre-booking only · 24 hours notice · Auroville, Tamil Nadu · rituskitchen.av@gmail.com · https://ritus-kitchen.vercel.app</div>
+</div>
+
+</body>
+</html>

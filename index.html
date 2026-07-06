@@ -206,6 +206,13 @@ section { position: relative; padding: 100px 0; }
   .btn { width: 100%; }
 }
 
+.menu-card-promo { padding: 64px 0; background: var(--cream-soft); }
+.menu-card-promo .section-header h2 { font-size: 42px; margin-bottom: 12px; }
+@media (max-width: 768px) {
+  .menu-card-promo { padding: 44px 0; }
+  .menu-card-promo .section-header h2 { font-size: 32px; }
+}
+
 /* Story */
 .story-section { background: var(--surface); border-radius: 32px; margin: 0 24px; padding: 80px 0; }
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -1063,6 +1070,25 @@ section { position: relative; padding: 100px 0; }
         <span>🌱 Vegan swaps</span>
         <span>🍃 No hidden maida</span>
       </div>
+    </div>
+  </div>
+  <div style="position:absolute; bottom:18px; right:24px; z-index:3; max-width:260px; display:none;" class="hero-menu-card-desktop">
+    <!-- menu card preview will be shown via CSS on desktop -->
+  </div>
+</section>
+
+<section class="menu-card-promo" id="menu-card">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center; margin-bottom: 30px;">
+      <h2>Our menu at a glance</h2>
+      <p>Save this card and share it with friends in Auroville.</p>
+    </div>
+    <div style="max-width: 700px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.12);">
+      <img src="ritus-kitchen-menu-instagram.png" alt="Ritu's Kitchen menu card with thalis, breakfast, starters, and prices" style="width:100%; display:block;">
+    </div>
+    <div style="text-align:center; margin-top: 24px;">
+      <a href="ritus-kitchen-menu-instagram.png" download class="btn btn-secondary">⬇ Download menu card</a>
+      <a href="order.html" class="btn btn-primary" style="margin-left:12px;">Order now</a>
     </div>
   </div>
 </section>
