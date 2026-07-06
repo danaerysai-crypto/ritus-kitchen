@@ -20,9 +20,9 @@
 
 ### `/order` — Direct customer to order form
 > Hi! 🍛 You can place your order here — it takes 30 seconds and Ritu gets all the details:
-> 
-> https://ritus-kitchen.vercel.apporder.html?utm_source=whatsapp&utm_medium=chat&utm_campaign=direct_order
-> 
+>
+> https://ritus-kitchen.vercel.app/order.html?utm_source=whatsapp&utm_medium=chat&utm_campaign=direct_order
+>
 > Or just reply with: name, area, meal (lunch/dinner/both), and dietary needs.
 
 ### `/menu` — Today's menu
@@ -32,17 +32,17 @@
 > 
 > ₹220 | Pre-book by 11 AM for lunch, 6 PM for dinner.
 > 
-> Order: https://ritus-kitchen.vercel.apporder.html
+> Order: https://ritus-kitchen.vercel.app/order.html
 
 ### `/tiffin` — Weekly subscription
 > 📅 *Weekly Tiffin — Ritu's Kitchen*
-> 
+>
 > 5 home-cooked meals — ₹1,100
 > No daily ordering. Delivered fresh.
-> 
+>
 > Customizable: vegan, gluten-free, low-oil, mild spice.
-> 
-> Subscribe: https://ritus-kitchen.vercel.apporder.html
+>
+> Subscribe: https://ritus-kitchen.vercel.app/order.html
 
 ---
 
@@ -78,8 +78,8 @@
 > Hi [Name], we haven't served you in a while! 🍛 We'd love to cook for you again.
 > 
 > This week's special: [dish]. Pre-book here:
-> https://ritus-kitchen.vercel.apporder.html
-> 
+> https://ritus-kitchen.vercel.app/order.html
+>
 > Reply YES and I'll save a thali for you.
 
 ### `/renew` — Weekly tiffin expiry
