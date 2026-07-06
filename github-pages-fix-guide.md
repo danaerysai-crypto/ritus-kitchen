@@ -117,7 +117,7 @@ ritus-kitchen/
 ### What You Should See
 
 ```
-Your site is live at https://danaerysai-crypto.github.io/ritus-kitchen/
+Your site is live at https://ritus-kitchen.vercel.app/
 ```
 
 ---
@@ -125,14 +125,14 @@ Your site is live at https://danaerysai-crypto.github.io/ritus-kitchen/
 ## Step 6: Wait and Test
 
 1. Wait **1–2 minutes** for GitHub Pages to rebuild
-2. Open: `https://danaerysai-crypto.github.io/ritus-kitchen/`
+2. Open: `https://ritus-kitchen.vercel.app/`
 3. If it still shows 404, wait another 2 minutes and hard-refresh:
    - Windows: `Ctrl + Shift + R`
    - Mac: `Cmd + Shift + R`
 4. Test these URLs:
-   - `https://danaerysai-crypto.github.io/ritus-kitchen/`
-   - `https://danaerysai-crypto.github.io/ritus-kitchen/order.html`
-   - `https://danaerysai-crypto.github.io/ritus-kitchen/order-history.html`
+   - `https://ritus-kitchen.vercel.app/`
+   - `https://ritus-kitchen.vercel.app/order.html`
+   - `https://ritus-kitchen.vercel.app/order-history.html`
 
 ---
 
@@ -179,7 +179,7 @@ Once Pages is live, update all your links:
 
 | Where | Link to Add |
 |-------|-------------|
-| Instagram bio | `https://danaerysai-crypto.github.io/ritus-kitchen/order.html` |
+| Instagram bio | `https://ritus-kitchen.vercel.app/order.html` |
 | WhatsApp status | Same order link |
 | Flyers / QR codes | Same order link |
 | Google Business | Website field |
@@ -191,11 +191,11 @@ Once Pages is live, update all your links:
 
 | Page | URL |
 |------|-----|
-| Home | `https://danaerysai-crypto.github.io/ritus-kitchen/` |
-| Order | `https://danaerysai-crypto.github.io/ritus-kitchen/order.html` |
-| Order History | `https://danaerysai-crypto.github.io/ritus-kitchen/order-history.html` |
-| Admin | `https://danaerysai-crypto.github.io/ritus-kitchen/admin.html` |
-| Menu | `https://danaerysai-crypto.github.io/ritus-kitchen/menu-v2.html` |
+| Home | `https://ritus-kitchen.vercel.app/` |
+| Order | `https://ritus-kitchen.vercel.app/order.html` |
+| Order History | `https://ritus-kitchen.vercel.app/order-history.html` |
+| Admin | `https://ritus-kitchen.vercel.app/admin.html` |
+| Menu | `https://ritus-kitchen.vercel.app/menu-v2.html` |
 
 ---
 

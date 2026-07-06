@@ -37,7 +37,7 @@
 
 ### Step 1: Customer Discovers You
 - Instagram post / WhatsApp status / Google search / flyer
-- UTM link points to `ritus-kitchen.github.io/order.html`
+- UTM link points to `https://ritus-kitchen.vercel.app/order.html`
 
 ### Step 2: Customer Orders Online
 - Fills `order.html` (name, phone, area, meal, quantity, dietary, source)

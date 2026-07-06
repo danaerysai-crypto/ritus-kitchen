@@ -19,7 +19,7 @@ Google Business Profile is **free local advertising**. When people search "home 
   - Add areas: **Auroville, Pondicherry, Tamil Nadu**
 - [ ] Add phone number: **+91 90431 40686**
 - [ ] Add email: **rituskitchen.av@gmail.com**
-- [ ] Add website: `https://ritus-kitchen.github.io/`
+- [ ] Add website: `https://ritus-kitchen.vercel.app`
 - [ ] Verify via postcard, phone, or email (Google will offer available options)
 
 ---
@@ -128,7 +128,7 @@ Log these monthly in `monthly-kpi-dashboard.csv`.
 > 
 > WhatsApp: +91 90431 40686
 > 
-> Website: ritus-kitchen.github.io
+> Website: https://ritus-kitchen.vercel.app
 
 ---
 

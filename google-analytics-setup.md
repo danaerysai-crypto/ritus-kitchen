@@ -6,7 +6,7 @@
 ## What You Need
 
 - Google account: **rituskitchen.av@gmail.com**
-- Website URL: `https://danaerysai-crypto.github.io/ritus-kitchen/`
+- Website URL: `https://ritus-kitchen.vercel.app/`
 - 15 minutes
 
 ---
@@ -34,7 +34,7 @@
 ## Step 2: Create Web Data Stream
 
 1. Choose **Web** platform
-2. **Website URL:** `https://danaerysai-crypto.github.io/ritus-kitchen`
+2. **Website URL:** `https://ritus-kitchen.vercel.app`
 3. **Stream name:** Website
 4. Click **Create stream**
 
@@ -91,7 +91,7 @@ git push origin main
 
 1. Wait 2 minutes after pushing
 2. Open live website:
-   `https://danaerysai-crypto.github.io/ritus-kitchen/`
+   `https://ritus-kitchen.vercel.app/`
 3. In GA4, go to **Home** → **Realtime** report
 4. You should see at least **1 user** on the site
 
@@ -149,19 +149,19 @@ Use UTM parameters on every external link so you know which channel drives order
 ### Example UTM Link for Instagram Bio
 
 ```
-https://danaerysai-crypto.github.io/ritus-kitchen/order.html?utm_source=instagram&utm_medium=bio&utm_campaign=organic
+https://ritus-kitchen.vercel.app/order.html?utm_source=instagram&utm_medium=bio&utm_campaign=organic
 ```
 
 ### Example UTM Link for WhatsApp Status
 
 ```
-https://danaerysai-crypto.github.io/ritus-kitchen/order.html?utm_source=whatsapp&utm_medium=status&utm_campaign=daily_thali
+https://ritus-kitchen.vercel.app/order.html?utm_source=whatsapp&utm_medium=status&utm_campaign=daily_thali
 ```
 
 ### Example UTM Link for Google Business Profile
 
 ```
-https://danaerysai-crypto.github.io/ritus-kitchen/order.html?utm_source=google_business&utm_medium=profile&utm_campaign=local_search
+https://ritus-kitchen.vercel.app/order.html?utm_source=google_business&utm_medium=profile&utm_campaign=local_search
 ```
 
 ---

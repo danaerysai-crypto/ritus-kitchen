@@ -103,7 +103,7 @@ Send this only after the first or second order:
 Instead of asking customers to remember, let them look up their own history.
 
 **How it works:**
-1. Customer visits: `ritus-kitchen.github.io/order-history.html`
+1. Customer visits: `https://ritus-kitchen.vercel.app/order-history.html`
 2. Enters their phone number
 3. Sees their past orders, total spent, favorite items, and any loyalty rewards
 

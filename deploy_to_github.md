@@ -33,7 +33,7 @@ git commit -m "Move all website files to repo root for GitHub Pages"
 git push origin main
 
 # 8. Wait 1-2 minutes, then test
-echo "Live URL: https://danaerysai-crypto.github.io/ritus-kitchen/"
+echo "Live URL: https://ritus-kitchen.vercel.app/"
 ```
 
 ---
@@ -115,10 +115,10 @@ The command method is faster and more reliable.
 
 Test these URLs in your browser:
 
-- `https://danaerysai-crypto.github.io/ritus-kitchen/`
-- `https://danaerysai-crypto.github.io/ritus-kitchen/order.html`
-- `https://danaerysai-crypto.github.io/ritus-kitchen/order-history.html`
-- `https://danaerysai-crypto.github.io/ritus-kitchen/menu-v2.html`
-- `https://danaerysai-crypto.github.io/ritus-kitchen/admin.html`
+- `https://ritus-kitchen.vercel.app/`
+- `https://ritus-kitchen.vercel.app/order.html`
+- `https://ritus-kitchen.vercel.app/order-history.html`
+- `https://ritus-kitchen.vercel.app/menu-v2.html`
+- `https://ritus-kitchen.vercel.app/admin.html`
 
 All should load without 404.

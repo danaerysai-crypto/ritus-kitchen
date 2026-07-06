@@ -115,9 +115,9 @@ Add shortcuts:
 
 | Page | URL |
 |------|-----|
-| Home | `https://ritus-kitchen.github.io/` |
-| Order | `https://ritus-kitchen.github.io/order.html` |
-| Order History | `https://ritus-kitchen.github.io/order-history.html` |
+| Home | `https://ritus-kitchen.vercel.app` |
+| Order | `https://ritus-kitchen.vercel.apporder.html` |
+| Order History | `https://ritus-kitchen.vercel.apporder-history.html` |
 | WhatsApp | `https://wa.me/919043140686` |
 | Email | `rituskitchen.av@gmail.com` |
 

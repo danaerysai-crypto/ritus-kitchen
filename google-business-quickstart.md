@@ -7,7 +7,7 @@
 
 - Google account: **rituskitchen.av@gmail.com**
 - Phone: **+91 90431 40686**
-- Website: `https://danaerysai-crypto.github.io/ritus-kitchen/`
+- Website: `https://ritus-kitchen.vercel.app/`
 - 5–10 photos of thalis, kitchen, and Ritu
 - 30 minutes
 
@@ -62,7 +62,7 @@ Add these areas:
 |-------|-------|
 | Phone | +91 90431 40686 |
 | Email | rituskitchen.av@gmail.com |
-| Website | `https://danaerysai-crypto.github.io/ritus-kitchen/order.html?utm_source=google_business&utm_medium=profile&utm_campaign=local_search` |
+| Website | `https://ritus-kitchen.vercel.app/order.html?utm_source=google_business&utm_medium=profile&utm_campaign=local_search` |
 
 ---
 
@@ -159,7 +159,7 @@ After setup, publish your first post:
 > 🍛 Today's Thali — fresh, home-cooked, and delivered in Auroville. Pre-book by 11 AM. Order via WhatsApp or our website.
 
 **Button:** Order online
-**Link:** `https://danaerysai-crypto.github.io/ritus-kitchen/order.html?utm_source=google_business&utm_medium=post&utm_campaign=daily_thali`
+**Link:** `https://ritus-kitchen.vercel.app/order.html?utm_source=google_business&utm_medium=post&utm_campaign=daily_thali`
 
 ---
 

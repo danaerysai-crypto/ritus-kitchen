@@ -32,10 +32,10 @@
 See `deploy_to_github.md` for exact copy-paste commands.
 
 ### After Fix, Test These URLs
-- [ ] `https://danaerysai-crypto.github.io/ritus-kitchen/`
-- [ ] `https://danaerysai-crypto.github.io/ritus-kitchen/order.html`
-- [ ] `https://danaerysai-crypto.github.io/ritus-kitchen/order-history.html`
-- [ ] `https://danaerysai-crypto.github.io/ritus-kitchen/admin.html`
+- [ ] `https://ritus-kitchen.vercel.app/`
+- [ ] `https://ritus-kitchen.vercel.app/order.html`
+- [ ] `https://ritus-kitchen.vercel.app/order-history.html`
+- [ ] `https://ritus-kitchen.vercel.app/admin.html`
 
 ---
 
@@ -50,7 +50,7 @@ See `deploy_to_github.md` for exact copy-paste commands.
 - [ ] Industry: **Food & Drink**
 - [ ] Business size: **Small**
 - [ ] Create Web data stream:
-  - Website URL: `https://danaerysai-crypto.github.io/ritus-kitchen`
+  - Website URL: `https://ritus-kitchen.vercel.app`
   - Stream name: **Website**
 - [ ] Copy the **Measurement ID** (looks like `G-XXXXXXXXXX`)
 - [ ] Replace all `G-XXXXXXXXXX` placeholders in:
@@ -87,7 +87,7 @@ See `deploy_to_github.md` for exact copy-paste commands.
 - [ ] Add service area: **Auroville, Pondicherry, Tamil Nadu**
 - [ ] Phone: **+91 90431 40686**
 - [ ] Email: **rituskitchen.av@gmail.com**
-- [ ] Website: `https://danaerysai-crypto.github.io/ritus-kitchen/`
+- [ ] Website: `https://ritus-kitchen.vercel.app/`
 - [ ] Hours: **7:00 AM – 8:00 PM daily**
 - [ ] Paste description from `tracking/google-business-setup-checklist.md`
 - [ ] Add photos: thali, kitchen, Ritu, delivery

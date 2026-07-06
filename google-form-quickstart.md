@@ -159,9 +159,9 @@ See `tracking/google-sheet-sync-guide.md` for full setup.
 
 ## Your Live Links (After GitHub Pages Fix)
 
-- Order page: `https://danaerysai-crypto.github.io/ritus-kitchen/order.html`
+- Order page: `https://ritus-kitchen.vercel.app/order.html`
 - Order responses: Your Google Sheet
-- Admin logger: `https://danaerysai-crypto.github.io/ritus-kitchen/admin.html`
+- Admin logger: `https://ritus-kitchen.vercel.app/admin.html`
 
 ---
 

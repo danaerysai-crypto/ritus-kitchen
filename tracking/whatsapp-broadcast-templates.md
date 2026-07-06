@@ -105,7 +105,7 @@ https://wa.me/919043140686?text=Hi%20Ritu,%20I%20want%20to%20order%20today's%20t
 
 Add UTM if sharing on web:
 ```
-https://ritus-kitchen.github.io/?utm_source=whatsapp&utm_medium=broadcast&utm_campaign=daily_thali
+https://ritus-kitchen.vercel.app?utm_source=whatsapp&utm_medium=broadcast&utm_campaign=daily_thali
 ```
 
 ---

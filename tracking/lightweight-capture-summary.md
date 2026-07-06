@@ -40,7 +40,7 @@ That's it. Order captured. Profile started.
 
 ## Customer Self-Service Order History
 
-**URL:** `ritus-kitchen.github.io/order-history.html`
+**URL:** `https://ritus-kitchen.vercel.app/order-history.html`
 
 **What customers see:**
 - Total orders

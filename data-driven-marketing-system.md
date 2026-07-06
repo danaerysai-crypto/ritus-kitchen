@@ -52,7 +52,7 @@
 Use this structure for every link you share:
 
 ```
-https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=daily_thali&utm_content=july7
+https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=daily_thali&utm_content=july7
 ```
 
 | Parameter | Use |

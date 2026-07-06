@@ -16,7 +16,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 📍 Auroville | Pre-booking only
 > 📱 Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=intro&utm_content=day1`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=intro&utm_content=day1`
 
 ---
 
@@ -28,7 +28,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order today's thali: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=reel&utm_campaign=behind_scenes&utm_content=day2`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=reel&utm_campaign=behind_scenes&utm_content=day2`
 
 ---
 
@@ -45,7 +45,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=daily_menu&utm_content=day3`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=daily_menu&utm_content=day3`
 
 ---
 
@@ -57,7 +57,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Try today's thali: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=testimonial&utm_content=day4`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=testimonial&utm_content=day4`
 
 ---
 
@@ -69,7 +69,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Tell us your need: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=dietary&utm_content=day5`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=dietary&utm_content=day5`
 
 ---
 
@@ -81,7 +81,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Limited boxes. Order by tonight: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=family_thali&utm_content=day6`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=family_thali&utm_content=day6`
 
 ---
 
@@ -93,7 +93,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=community&utm_content=day7`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=community&utm_content=day7`
 
 ---
 
@@ -110,7 +110,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Claim: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=newcomer_offer&utm_content=day8`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=newcomer_offer&utm_content=day8`
 
 ---
 
@@ -123,7 +123,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Subscribe: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=weekly_tiffin&utm_content=day9`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=weekly_tiffin&utm_content=day9`
 
 ---
 
@@ -139,7 +139,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=wellness_thali&utm_content=day10`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=wellness_thali&utm_content=day10`
 
 ---
 
@@ -154,7 +154,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order daily thali: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=poll&utm_content=day11`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=poll&utm_content=day11`
 
 ---
 
@@ -166,7 +166,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > WhatsApp: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=scarcity&utm_content=day12`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=scarcity&utm_content=day12`
 
 ---
 
@@ -180,7 +180,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=referral&utm_content=day13`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=referral&utm_content=day13`
 
 ---
 
@@ -194,7 +194,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Subscribe: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=sunday_prep&utm_content=day14`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=sunday_prep&utm_content=day14`
 
 ---
 
@@ -213,7 +213,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=faq&utm_content=day15`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=faq&utm_content=day15`
 
 ---
 
@@ -225,7 +225,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order today's thali: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=packaging&utm_content=day16`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=packaging&utm_content=day16`
 
 ---
 
@@ -237,7 +237,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=reel&utm_campaign=timelapse&utm_content=day17`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=reel&utm_campaign=timelapse&utm_content=day17`
 
 ---
 
@@ -249,7 +249,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=local_love&utm_content=day18`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=local_love&utm_content=day18`
 
 ---
 
@@ -264,7 +264,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Pre-order by [date]: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=festival_box&utm_content=day19`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=festival_box&utm_content=day19`
 
 ---
 
@@ -288,7 +288,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=meet_ritu&utm_content=day21`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=meet_ritu&utm_content=day21`
 
 ---
 
@@ -302,7 +302,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Weekly tiffin: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=consistency&utm_content=day22`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=consistency&utm_content=day22`
 
 ---
 
@@ -314,7 +314,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=addon&utm_content=day23`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=addon&utm_content=day23`
 
 ---
 
@@ -326,7 +326,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=ugc&utm_content=day24`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=ugc&utm_content=day24`
 
 ---
 
@@ -351,7 +351,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=story&utm_campaign=flash_offer&utm_content=day26`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=story&utm_campaign=flash_offer&utm_content=day26`
 
 ---
 
@@ -364,7 +364,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=value&utm_content=day27`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=value&utm_content=day27`
 
 ---
 
@@ -378,7 +378,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Order: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=monthly_recap&utm_content=day28`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=monthly_recap&utm_content=day28`
 
 ---
 
@@ -390,7 +390,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Enquire: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=catering&utm_content=day29`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=catering&utm_content=day29`
 
 ---
 
@@ -402,7 +402,7 @@ Use one per day. Replace `G-XXXXXXXXXX` with your actual Google Analytics ID.
 > 
 > Start here: [link]
 
-**Link:** `https://ritus-kitchen.github.io/?utm_source=instagram&utm_medium=post&utm_campaign=final_cta&utm_content=day30`
+**Link:** `https://ritus-kitchen.vercel.app?utm_source=instagram&utm_medium=post&utm_campaign=final_cta&utm_content=day30`
 
 ---
 
@@ -422,5 +422,5 @@ If you post on **WhatsApp status**, use the same UTM links with `utm_source=what
 
 Example:
 ```
-https://ritus-kitchen.github.io/?utm_source=whatsapp&utm_medium=status&utm_campaign=daily_menu&utm_content=july7
+https://ritus-kitchen.vercel.app?utm_source=whatsapp&utm_medium=status&utm_campaign=daily_menu&utm_content=july7
 ```
