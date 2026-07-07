@@ -19,7 +19,7 @@
 ## Order Intake Templates
 
 ### `/order` — Direct customer to order form
-> Hi! 🍛 You can place your order here — it takes 30 seconds and Ritu gets all the details:
+> Hi! 🍛 You can book your spot here — it takes 30 seconds and Ritu gets all the details:
 >
 > https://ritus-kitchen.vercel.app/order.html?utm_source=whatsapp&utm_medium=chat&utm_campaign=direct_order
 >
@@ -30,9 +30,23 @@
 > 
 > [Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]
 > 
-> ₹220 | Pre-book by 11 AM for lunch, 6 PM for dinner.
+> ₹220 | One chef, 10 plates per meal. Pre-book by 11 AM for lunch, 6 PM for dinner.
 > 
-> Order: https://ritus-kitchen.vercel.app/order.html
+> Book your spot: https://ritus-kitchen.vercel.app/order.html
+
+### `/soldout` — Slots are full
+> Hi! 🍛 Today's [lunch/dinner] slots are full. I can only serve 10 meals per slot as a solo chef.
+>
+> Would you like to:
+> 1. Join the waitlist in case a slot opens
+> 2. Book the next meal
+>
+> Reply WAITLIST or NEXT and I'll take care of it.
+
+### `/waitlist` — Add to waitlist
+> You're on the waitlist for [lunch/dinner] on [date]. 🍛
+>
+> If someone cancels, I'll message you right away. Slots are non-refundable once booked.
 
 ### `/tiffin` — Weekly subscription
 > 📅 *Weekly Tiffin — Ritu's Kitchen*

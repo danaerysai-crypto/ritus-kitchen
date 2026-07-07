@@ -13,6 +13,8 @@ Copy each block into WhatsApp Business → Settings → Business tools → Quick
 | `/vegan` | Customer asks vegan options |
 | `/location` | Customer asks delivery area |
 | `/pay` | Customer asks payment method |
+| `/soldout` | Slots are full |
+| `/waitlist` | Add customer to waitlist |
 | `/thanks` | After delivery |
 | `/review` | Ask for Google review |
 | `/feedback` | Quick 2-tap feedback |
@@ -21,7 +23,7 @@ Copy each block into WhatsApp Business → Settings → Business tools → Quick
 
 ## `/order`
 ```
-Hi! 🍛 You can place your order here — it takes 30 seconds and Ritu gets all the details:
+Hi! 🍛 You can book your spot here — it takes 30 seconds and Ritu gets all the details:
 
 https://ritus-kitchen.vercel.app/order.html?utm_source=whatsapp&utm_medium=chat&utm_campaign=quick_order
 
@@ -34,9 +36,9 @@ Or just reply with: name, area, meal (lunch/dinner/both), and dietary needs.
 
 [Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]
 
-₹220 | Pre-book by 11 AM for lunch, 6 PM for dinner.
+₹220 | One chef, 10 plates per meal. Pre-book by 11 AM for lunch, 6 PM for dinner.
 
-Order: https://ritus-kitchen.vercel.app/order.html
+Book your spot: https://ritus-kitchen.vercel.app/order.html
 ```
 
 ## `/tiffin`
@@ -73,9 +75,9 @@ Delivery included within Auroville.
 Lunch: Pre-book by 11 AM
 Dinner: Pre-book by 6 PM
 
-Weekly tiffin: Order once, get 5 meals.
+One chef, 10 plates per meal. Once slots fill, the kitchen closes for that meal.
 
-We cook fresh daily — no same-day orders unless already prepared.
+Weekly tiffin: Order once, get 5 meals.
 ```
 
 ## `/gf`
@@ -84,7 +86,7 @@ We cook fresh daily — no same-day orders unless already prepared.
 
 We use millets, rice, and naturally GF ingredients. No hidden maida.
 
-Mention "GF" when you order. ₹30 extra for GF thali (₹250).
+Mention "GF" when you book. ₹30 extra for GF thali (₹250).
 ```
 
 ## `/vegan`
@@ -93,7 +95,7 @@ Mention "GF" when you order. ₹30 extra for GF thali (₹250).
 
 No dairy, no ghee, no honey. Plant-based thalis and breakfasts on request.
 
-Mention "Vegan" when you order.
+Mention "Vegan" when you book.
 ```
 
 ## `/location`
@@ -114,7 +116,25 @@ We accept:
 • Cash on delivery
 • Bank transfer
 
-Payment details shared after order confirmation.
+Booking is confirmed only after payment. Slots are non-refundable.
+```
+
+## `/soldout`
+```
+Hi! 🍛 Today's [lunch/dinner] slots are full. I can only serve 10 meals per slot as a solo chef.
+
+Would you like to:
+1. Join the waitlist in case a slot opens
+2. Book the next meal
+
+Reply WAITLIST or NEXT and I'll take care of it.
+```
+
+## `/waitlist`
+```
+You're on the waitlist for [lunch/dinner] on [date]. 🍛
+
+If someone cancels, I'll message you right away. Slots are non-refundable once booked.
 ```
 
 ## `/thanks`

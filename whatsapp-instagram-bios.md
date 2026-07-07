@@ -7,8 +7,9 @@ Use these exact copy-paste texts for WhatsApp Business, Instagram, and Google Bu
 ## 1. WhatsApp Business "About" / Bio
 
 ```
-Home-cooked thalis in Auroville. Pre-book by 11 AM. Fresh, seasonal & made with love. 🍛
-Gluten-free, vegan & no-onion-garlic options available.
+Home-cooked thalis in Auroville. One chef, 10 plates per meal.
+Pre-book by 11 AM for lunch · 6 PM for dinner.
+GF · Vegan · No hidden maida
 📱 https://ritus-kitchen.vercel.app/order.html
 ```
 
@@ -18,9 +19,9 @@ Gluten-free, vegan & no-onion-garlic options available.
 
 ```
 Home-cooked thalis in Auroville 🍛
-Pre-book by 11 AM · Fresh daily
-GF · Vegan · No hidden maida
-👇 Order here
+One chef · 10 plates per meal
+Pre-book by 11 AM · GF · Vegan
+👇 Book your spot
 https://ritus-kitchen.vercel.app/order.html
 ```
 
@@ -29,7 +30,7 @@ https://ritus-kitchen.vercel.app/order.html
 ## 3. Google Business Profile Description
 
 ```
-Ritu's Kitchen serves fresh, home-cooked Indian thalis in Auroville. Every meal is made with seasonal ingredients, no shortcuts, and the same care I cook for my own family. We offer gluten-free, vegan, no-onion-garlic, and diabetic-friendly options on request. Breakfast, lunch, and dinner thalis are available with 24-hour pre-booking. Delivery within Auroville. Order via WhatsApp or through our website.
+Ritu's Kitchen is a solo home kitchen in Auroville serving fresh, home-cooked Indian thalis. I cook alone and can serve only 10 meals per slot, so every plate is made fresh, not reheated. Gluten-free, vegan, no-onion-garlic, and diabetic-friendly options available. Pre-book by 11 AM for lunch or 6 PM for dinner. Delivery within Auroville. Order via WhatsApp or our website.
 ```
 
 ---
@@ -37,7 +38,7 @@ Ritu's Kitchen serves fresh, home-cooked Indian thalis in Auroville. Every meal 
 ## 4. WhatsApp Click-to-Chat Link (Pre-filled Message)
 
 ```
-https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20order%20a%20thali.%20My%20name%20is%20__%20and%20I%20am%20at%20__.%0A%0APreferred%20meal%3A%20Veg%20%2F%20GF%20%2F%20Egg%20%2F%20Chicken%20%2F%20Fish%0ADate%3A%20__%0ANotes%3A%20__
+https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20book%20a%20thali%20spot.%20My%20name%20is%20__%20and%20I%20am%20at%20__.%0A%0AMeal%3A%20Veg%20%2F%20GF%20%2F%20Egg%20%2F%20Chicken%20%2F%20Fish%0ADate%20%26%20slot%3A%20__%0ANotes%3A%20__
 ```
 
 ---
@@ -45,12 +46,12 @@ https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20order%20a
 ## 5. Launch Instagram Caption (Use with menu-card-instagram.png)
 
 ```
-Our menu is live. 🍛✨
+One chef. 10 plates per meal. 🍛✨
 
-Home-cooked thalis, fresh every day in Auroville. Gluten-free, vegan, and made-like-family options available.
+Home-cooked thalis in Auroville, cooked fresh the day you eat them. Gluten-free, vegan, and made-like-family options available.
 
 📱 Pre-book via WhatsApp: +91 90431 40686
-👇 Or order online: https://ritus-kitchen.vercel.app/order.html
+👇 Book your spot: https://ritus-kitchen.vercel.app/order.html
 
 #Auroville #AurovilleFood #HomeCooked #GlutenFree #VeganFood #RitusKitchen #SouthIndianFood #Thali #FreshFood
 ```
@@ -60,9 +61,9 @@ Home-cooked thalis, fresh every day in Auroville. Gluten-free, vegan, and made-l
 ## 6. Instagram Story Text (Use with menu-card-story.png)
 
 ```
-Swipe up / DM to order
-Today's menu → link in bio
-Fresh thalis · Auroville · Pre-book by 11 AM
+10 plates per meal
+Book before slots fill
+Fresh thalis · Auroville · Link in bio
 ```
 
 ---
@@ -72,9 +73,9 @@ Fresh thalis · Auroville · Pre-book by 11 AM
 ```
 🍛 Our complete menu is here.
 
-Breakfast, lunch, dinner thalis, starters, soups, and sweet endings — all cooked fresh in Auroville. Gluten-free and vegan options available with 24-hour notice.
+Breakfast, lunch, dinner thalis, starters, soups, and sweet endings — all cooked fresh in Auroville. One chef, 10 plates per meal. Gluten-free and vegan options available with advance booking.
 
-Order now: https://ritus-kitchen.vercel.app/order.html
+Book your spot: https://ritus-kitchen.vercel.app/order.html
 Call/WhatsApp: +91 90431 40686
 ```
 
@@ -85,7 +86,8 @@ Call/WhatsApp: +91 90431 40686
 ```
 Today's menu card is out 🍛
 Veg thali ₹220 · GF thali ₹250 · Egg ₹320 · Chicken/Fish ₹420
-Pre-book on WhatsApp: +91 90431 40686
+Only 10 plates per meal · Pre-book on WhatsApp
++91 90431 40686
 https://ritus-kitchen.vercel.app/order.html
 ```
 
@@ -94,7 +96,7 @@ https://ritus-kitchen.vercel.app/order.html
 ## 9. Link-in-Bio Caption
 
 ```
-Order fresh, home-cooked thalis in Auroville 👇
+Book your spot — fresh, home-cooked thalis in Auroville 👇
 https://ritus-kitchen.vercel.app/order.html
 ```
 
@@ -103,7 +105,7 @@ https://ritus-kitchen.vercel.app/order.html
 ## 10. Signature Tagline
 
 ```
-"Homely food, away from home." — Ritu's Kitchen, Auroville
+"One chef. 10 plates. Cooked the day you eat them." — Ritu's Kitchen, Auroville
 ```
 
 ---

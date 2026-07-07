@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page not found — Ritu's Kitchen</title>
-<meta name="description" content="Sorry, we couldn't find that page. Return to Ritu's Kitchen homepage.">
+<meta name="description" content="Sorry, this page is not on the menu. Back to Ritu's Kitchen home.">
 <link rel="canonical" href="https://ritus-kitchen.vercel.app/404.html">
-<meta name="robots" content="noindex, follow">
 <style>
 :root {
   --green: #244A36;
@@ -19,7 +18,6 @@
   --body: #4C544F;
   --muted: #727A75;
   --border: #E4DED2;
-  --surface: #FFFFFF;
 }
 * { box-sizing: border-box; }
 body {
@@ -27,68 +25,61 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--body);
   background: var(--cream);
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   text-align: center;
   padding: 24px;
 }
-.error-card {
-  background: var(--surface);
-  border-radius: 24px;
-  padding: 48px 36px;
-  max-width: 520px;
-  width: 100%;
-  box-shadow: 0 16px 48px rgba(31,36,33,0.08);
+.container { max-width: 520px; }
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
-.error-icon {
-  font-size: 72px;
-  line-height: 1;
-  margin-bottom: 16px;
+h1 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  color: var(--ink);
+  margin: 0 0 12px;
 }
-h1 { color: var(--ink); font-size: 28px; margin: 0 0 12px; }
-p { font-size: 16px; margin: 0 0 28px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+p { font-size: 17px; line-height: 1.7; margin: 0 0 28px; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-}
-.btn-primary {
+  display: inline-block;
   background: var(--green);
   color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
 }
-.btn-primary:hover { background: var(--green-dark); }
-.btn-secondary {
-  background: var(--cream-soft);
-  color: var(--green);
-  border: 1px solid var(--border);
-}
+.btn:hover { background: var(--green-dark); }
+.links { margin-top: 20px; }
+.links a { color: var(--green); text-decoration: none; margin: 0 10px; font-size: 15px; }
+.links a:hover { text-decoration: underline; }
 @media (max-width: 480px) {
-  .error-card { padding: 36px 24px; }
-  h1 { font-size: 24px; }
+  h1 { font-size: 32px; }
+  .logo { width: 96px; height: 96px; }
 }
 </style>
 <link rel="icon" type="image/png" href="images/logo-ritus-kitchen-regenerated.png">
 </head>
 <body>
-
-<div class="error-card">
-  <div class="error-icon">🍛</div>
-  <h1>This dish isn't on the menu</h1>
-  <p>Sorry, we couldn't find the page you were looking for. It may have moved or never existed.</p>
-  <div class="actions">
-    <a href="index.html" class="btn btn-primary">Back to homepage</a>
-    <a href="order.html" class="btn btn-secondary">Order a thali</a>
+  <div class="container">
+    <img src="images/logo-ritus-kitchen-regenerated.png" alt="Ritu's Kitchen" class="logo">
+    <h1>404</h1>
+    <p>Sorry, this page isn't on today's menu. It may have moved or never existed.</p>
+    <a href="index.html" class="btn">Back to Ritu's Kitchen</a>
+    <div class="links">
+      <a href="order.html">Order now</a>
+      <a href="menu-v2.html">View menu</a>
+      <a href="https://wa.me/919043140686">WhatsApp</a>
+    </div>
   </div>
-</div>
-
 </body>
 </html>

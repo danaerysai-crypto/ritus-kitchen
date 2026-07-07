@@ -1,57 +1,178 @@
-Ritu's Kitchen — WhatsApp Quick Replies
-Set up in WhatsApp Business → ⋮ → Business tools → Quick replies
+# Ritu's Kitchen — WhatsApp Business Quick Replies
 
-/order
-Hi! 🍛 Order here: https://ritus-kitchen.vercel.app/order.html
-Or reply: name, area, meal (lunch/dinner/both), dietary needs.
+Copy each block into WhatsApp Business → Settings → Business tools → Quick replies.
 
-/menu
-🍛 Today's Thali — Ritu's Kitchen
+| Shortcut | Use when... |
+|----------|-------------|
+| /order | Customer wants to order |
+| /menu | Customer asks for today's menu |
+| /tiffin | Customer asks about weekly plan |
+| /price | Customer asks for prices |
+| /hours | Customer asks timing / pre-book |
+| /gf | Customer asks gluten-free options |
+| /vegan | Customer asks vegan options |
+| /location | Customer asks delivery area |
+| /pay | Customer asks payment method |
+| /soldout | Slots are full |
+| /waitlist | Add customer to waitlist |
+| /thanks | After delivery |
+| /review | Ask for Google review |
+| /feedback | Quick 2-tap feedback |
+
+---
+
+## /order
+Hi! 🍛 You can book your spot here — it takes 30 seconds and Ritu gets all the details:
+
+https://ritus-kitchen.vercel.app/order.html?utm_source=whatsapp&utm_medium=chat&utm_campaign=quick_order
+
+Or just reply with: name, area, meal (lunch/dinner/both), and dietary needs.
+
+---
+
+## /menu
+🍛 *Today's Thali — Ritu's Kitchen*
+
 [Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]
-₹220 | Pre-book by 11 AM lunch / 6 PM dinner
-https://ritus-kitchen.vercel.app/order.html
 
-/tiffin
-📅 Weekly Tiffin — 5 meals ₹1,100
-Customizable: vegan, GF, low-oil, mild spice
-https://ritus-kitchen.vercel.app/order.html
+₹220 | One chef, 10 plates per meal. Pre-book by 11 AM for lunch, 6 PM for dinner.
 
-/price
-Veg Thali ₹220 | GF ₹250 | Egg ₹320 | Chicken/Fish ₹420
-Breakfast ₹80–180 | Starters ₹120–180
-Delivery included in Auroville.
+Book your spot: https://ritus-kitchen.vercel.app/order.html
 
-/hours
-Lunch pre-book by 11 AM
-Dinner pre-book by 6 PM
-Weekly tiffin: order once, 5 meals.
+---
 
-/gf
-🌾 Gluten-free available. Millets, rice, no maida.
-GF thali ₹250. Mention "GF" while ordering.
+## /tiffin
+📅 *Weekly Tiffin — Ritu's Kitchen*
 
-/vegan
-🌱 Vegan available. No dairy/ghee/honey. Plant-based thalis on request.
+5 home-cooked meals — ₹1,100
+No daily ordering. Delivered fresh.
 
-/location
-📍 Delivery within Auroville. Share guesthouse/area.
-Outside Auroville? Pickup may be possible.
+Customizable: vegan, gluten-free, low-oil, mild spice.
 
-/pay
-UPI (GPay/PhonePe/Paytm) | Cash on delivery | Bank transfer
-Payment details shared after order confirmation.
+Subscribe: https://ritus-kitchen.vercel.app/order.html
 
-/thanks
+---
+
+## /price
+💰 *Prices — Ritu's Kitchen*
+
+Veg Thali: ₹220
+GF Thali: ₹250
+Egg Thali: ₹320
+Chicken/Fish Thali: ₹420
+
+Breakfast items: ₹80–₹180
+Starters & soups: ₹120–₹180
+
+Delivery included within Auroville.
+
+---
+
+## /hours
+⏰ *Ordering Hours*
+
+Lunch: Pre-book by 11 AM
+Dinner: Pre-book by 6 PM
+
+One chef, 10 plates per meal. Once slots fill, the kitchen closes for that meal.
+
+Weekly tiffin: Order once, get 5 meals.
+
+---
+
+## /gf
+🌾 *Gluten-free options available.*
+
+We use millets, rice, and naturally GF ingredients. No hidden maida.
+
+Mention "GF" when you book. ₹30 extra for GF thali (₹250).
+
+---
+
+## /vegan
+🌱 *Vegan options available.*
+
+No dairy, no ghee, no honey. Plant-based thalis and breakfasts on request.
+
+Mention "Vegan" when you book.
+
+---
+
+## /location
+📍 *Delivery within Auroville.*
+
+Tell us your guesthouse, community, or area. We'll confirm delivery time.
+
+Outside Auroville? Pickup may be possible — ask Ritu.
+
+---
+
+## /pay
+💳 *Payment*
+
+We accept:
+• UPI (Google Pay / PhonePe / Paytm)
+• Cash on delivery
+• Bank transfer
+
+Booking is confirmed only after payment. Slots are non-refundable.
+
+---
+
+## /soldout
+Hi! 🍛 Today's [lunch/dinner] slots are full. I can only serve 10 meals per slot as a solo chef.
+
+Would you like to:
+1. Join the waitlist in case a slot opens
+2. Book the next meal
+
+Reply WAITLIST or NEXT and I'll take care of it.
+
+---
+
+## /waitlist
+You're on the waitlist for [lunch/dinner] on [date]. 🍛
+
+If someone cancels, I'll message you right away. Slots are non-refundable once booked.
+
+---
+
+## /thanks
 Hi {{1}}, hope you enjoyed today's thali! 🍛
-Quick feedback: https://ritus-kitchen.vercel.app/order-history.html
+
+A quick 30-second feedback helps Ritu serve you better:
+https://ritus-kitchen.vercel.app/order-history.html
+
 Thank you! 🙏
 
-/review
-Hi {{1}}! 🙏 A quick Google review helps more Aurovilians find us.
-[Add Google review link]
-Thank you!
+---
 
-/feedback
+## /review
+Hi {{1}}! 🙏 If Ritu's Kitchen made your day better, a quick Google review helps more Aurovilians find home-cooked food.
+
+[Google review link]
+
+Thank you for supporting us!
+
+---
+
+## /feedback
 Hi {{1}}! Quick 2-tap feedback:
+
 1. How was your meal? 😍 / 🙂 / 😐
-2. Order again this week? Yes / Maybe / No
+2. Will you order again this week? Yes / Maybe / No
+
+Just reply with emojis/words. Thank you!
+
+---
+
+## How to set up
+
+1. Open WhatsApp Business on your phone
+2. Tap More options (⋮) → Business tools → Quick replies
+3. Tap Add (+)
+4. Paste the message
+5. Set shortcut (e.g. /order)
+6. Save
+
+In chat, type /order and the message appears instantly.

@@ -185,13 +185,18 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
 <header>
   <div class="container">
     <h1>Ritu's Kitchen</h1>
-    <p>Home-cooked thalis in Auroville — pre-book now</p>
+    <p>One chef · 10 plates per meal · Pre-book your spot</p>
   </div>
 </header>
 
 <div class="container">
 
   <div class="card" id="menu-card">
+    <div class="order-info-box" style="background: var(--cream-soft); border-left-color: var(--green);">
+      <h3>🍛 Solo chef, 10 plates per meal</h3>
+      <p style="margin:0 0 12px; font-size: 14px; color: var(--body);">I cook alone and can serve only 10 meals per slot. Once the 10 slots fill, the kitchen closes for that meal. Book early.</p>
+    </div>
+
     <div class="order-info-box">
       <h3>⏰ Pre-booking required</h3>
       <ul>
@@ -200,7 +205,7 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
         <li><strong>Dinner:</strong> Order by 6 PM, served 6–8 PM</li>
       </ul>
     </div>
-    <h2 style="margin-bottom: 10px;">🍛 Today's Thali</h2>
+    <h2 style="margin-bottom: 10px;">Today's Thali</h2>
     <p style="margin:0 0 14px; color: var(--muted); font-size: 14px;">Menu changes daily. Fresh, home-cooked, delivered.</p>
     <div style="background: var(--cream-soft); border-radius: 10px; padding: 16px; margin-bottom: 14px;">
       <p style="margin:0; font-weight: 600; color: var(--ink);">Today's menu: [Dal], [Sabzi], [Roti], [Rice], [Salad], [Papad], [Pickle]</p>
@@ -220,12 +225,13 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   </div>
 
   <div class="card order-info-box" style="border-left-color: var(--terracotta);">
-    <h3>🚚 Delivery & cancellation</h3>
+    <h3>🚚 Delivery & booking policy</h3>
     <ul>
       <li><strong>Delivery area:</strong> Within Auroville. Share your guesthouse or area.</li>
       <li><strong>Delivery time:</strong> Breakfast 9–10 AM, Lunch 12–2 PM, Dinner 6–8 PM.</li>
-      <li><strong>Cancellation:</strong> Free until 4 hours before your slot. After that, food is prepped and cannot be refunded.</li>
-      <li><strong>Changes:</strong> Message us on WhatsApp. We'll accommodate if possible.</li>
+      <li><strong>Capacity:</strong> Only 10 plates per meal. Once slots fill, the kitchen closes for that slot.</li>
+      <li><strong>Confirmation:</strong> Your booking is confirmed only after payment. Booked slots are non-refundable.</li>
+      <li><strong>Changes:</strong> Dietary requests must be shared before the order list closes.</li>
     </ul>
   </div>
 
@@ -304,8 +310,8 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
       <textarea id="notes" name="notes" placeholder="Delivery time preference, allergies, special request..."></textarea>
     </div>
 
-    <button type="submit" id="submitBtn">Confirm Order on WhatsApp</button>
-    <p class="privacy-note">By ordering, you agree to share this info for order fulfilment only.</p>
+    <button type="submit" id="submitBtn">Confirm booking & pay on WhatsApp</button>
+    <p class="privacy-note">Booking is confirmed only after payment. Slots are non-refundable once booked.</p>
   </form>
 
   <div class="card success-msg" id="successMsg">
@@ -320,6 +326,13 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
       📜 <a href="order-history.html" style="color: var(--green);">My Order History</a> | 
       📧 <a href="mailto:rituskitchen.av@gmail.com" style="color: var(--green);">rituskitchen.av@gmail.com</a>
     </p>
+  </div>
+
+  <!-- Sold-out / waitlist card -->
+  <div class="card order-info-box" id="waitlistCard" style="border-left-color: var(--gold);">
+    <h3>⏳ Slots full?</h3>
+    <p style="margin:0 0 10px; font-size: 14px; color: var(--body);">If the meal you want is sold out, join the waitlist. I'll message you if a spot opens.</p>
+    <a href="https://wa.me/919043140686?text=Hi%20Ritu%2C%20please%20add%20me%20to%20the%20waitlist%20for%20%5Blunch%2Fdinner%5D%20on%20%5Bdate%5D.%20My%20name%20is%20%5B__%5D%20and%20I%20am%20at%20%5B__%5D." class="btn btn-secondary" style="display:block; text-align:center;">Join waitlist on WhatsApp</a>
   </div>
 
 </div>
