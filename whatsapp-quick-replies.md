@@ -111,10 +111,14 @@ Outside Auroville? Pickup may be possible — ask Ritu.
 ```
 💳 *Payment*
 
-We accept:
-• UPI (Google Pay / PhonePe / Paytm)
+UPI ID: *ritika-kukreja@ptyes*
+Name: Ritu's Kitchen
+
+We also accept:
 • Cash on delivery
-• Bank transfer
+• Bank transfer (ask for details)
+
+QR code: https://ritus-kitchen.vercel.app/order.html
 
 Booking is confirmed only after payment. Slots are non-refundable.
 ```
