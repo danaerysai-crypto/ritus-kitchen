@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order Thali — Ritu's Kitchen</title>
 <meta name="description" content="Pre-book your home-cooked thali from Ritu's Kitchen. Today's menu, dietary options, and delivery in Auroville.">
+<link rel="canonical" href="https://ritus-kitchen.vercel.app/order.html">
+<meta property="og:title" content="Order Thali — Ritu's Kitchen">
+<meta property="og:description" content="Pre-book your home-cooked thali in Auroville. GF, vegan, no hidden maida. Delivery included.">
+<meta property="og:image" content="https://ritus-kitchen.vercel.app/ritus-kitchen-menu-instagram.png">
+<meta property="og:url" content="https://ritus-kitchen.vercel.app/order.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Order Thali — Ritu's Kitchen">
+<meta name="twitter:description" content="Pre-book your home-cooked thali in Auroville. GF, vegan, no hidden maida. Delivery included.">
+<meta name="twitter:image" content="https://ritus-kitchen.vercel.app/ritus-kitchen-menu-instagram.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -128,6 +138,40 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   text-align: center;
   margin-top: 12px;
 }
+.order-info-box {
+  background: var(--cream-soft);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.order-info-box h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.order-info-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--body);
+}
+.order-info-box li { margin-bottom: 6px; }
+.order-info-box strong { color: var(--ink); }
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.payment-tag {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--ink);
+}
 @media (max-width: 480px) {
   .container { padding: 16px; }
   .card { padding: 18px; }
@@ -148,6 +192,14 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
 <div class="container">
 
   <div class="card" id="menu-card">
+    <div class="order-info-box">
+      <h3>⏰ Pre-booking required</h3>
+      <ul>
+        <li><strong>Breakfast:</strong> Order by 8 PM previous day, served 9–10 AM</li>
+        <li><strong>Lunch:</strong> Order by 11 AM, served 12–2 PM</li>
+        <li><strong>Dinner:</strong> Order by 6 PM, served 6–8 PM</li>
+      </ul>
+    </div>
     <h2 style="margin-bottom: 10px;">🍛 Today's Thali</h2>
     <p style="margin:0 0 14px; color: var(--muted); font-size: 14px;">Menu changes daily. Fresh, home-cooked, delivered.</p>
     <div style="background: var(--cream-soft); border-radius: 10px; padding: 16px; margin-bottom: 14px;">
@@ -155,6 +207,26 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
     </div>
     <div class="price-display">₹220</div>
     <p style="margin:6px 0 0; font-size: 13px; color: var(--muted);">Delivery included within Auroville. Pre-book by 11 AM for lunch, 6 PM for dinner.</p>
+  </div>
+
+  <div class="card order-info-box">
+    <h3>💳 Payment options</h3>
+    <p style="margin:0 0 8px; font-size: 14px; color: var(--body);">Pay after your order is confirmed on WhatsApp.</p>
+    <div class="payment-options">
+      <span class="payment-tag">UPI — GPay / PhonePe / Paytm</span>
+      <span class="payment-tag">Cash on delivery</span>
+      <span class="payment-tag">Bank transfer</span>
+    </div>
+  </div>
+
+  <div class="card order-info-box" style="border-left-color: var(--terracotta);">
+    <h3>🚚 Delivery & cancellation</h3>
+    <ul>
+      <li><strong>Delivery area:</strong> Within Auroville. Share your guesthouse or area.</li>
+      <li><strong>Delivery time:</strong> Breakfast 9–10 AM, Lunch 12–2 PM, Dinner 6–8 PM.</li>
+      <li><strong>Cancellation:</strong> Free until 4 hours before your slot. After that, food is prepped and cannot be refunded.</li>
+      <li><strong>Changes:</strong> Message us on WhatsApp. We'll accommodate if possible.</li>
+    </ul>
   </div>
 
   <form id="orderForm" class="card">

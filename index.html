@@ -5,6 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ritu's Kitchen — Homely food, away from home</title>
 <meta name="description" content="Home-cooked Indian meals in Auroville. Pre-booking only. Gluten-free, vegan, and full-of-love options. WhatsApp 90431 40686.">
+<link rel="canonical" href="https://ritus-kitchen.vercel.app/">
+<meta property="og:title" content="Ritu's Kitchen — Homely food, away from home">
+<meta property="og:description" content="Home-cooked Indian thalis in Auroville. Pre-book by 11 AM. GF, vegan, no hidden maida.">
+<meta property="og:image" content="https://ritus-kitchen.vercel.app/ritus-kitchen-menu-instagram.png">
+<meta property="og:url" content="https://ritus-kitchen.vercel.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ritu's Kitchen — Homely food, away from home">
+<meta name="twitter:description" content="Home-cooked Indian thalis in Auroville. Pre-book by 11 AM. GF, vegan, no hidden maida.">
+<meta name="twitter:image" content="https://ritus-kitchen.vercel.app/ritus-kitchen-menu-instagram.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ritu's Kitchen",
+  "image": "https://ritus-kitchen.vercel.app/images/logo-ritus-kitchen-regenerated.png",
+  "@id": "https://ritus-kitchen.vercel.app/",
+  "url": "https://ritus-kitchen.vercel.app/",
+  "telephone": "+91-90431-40686",
+  "email": "rituskitchen.av@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Auroville",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "priceRange": "₹₹",
+  "cuisine": "Indian, South Indian",
+  "servesCuisine": "South Indian",
+  "acceptsReservations": "False",
+  "paymentAccepted": "UPI, Cash, Bank transfer",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "20:00"
+    }
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
@@ -566,6 +607,54 @@ section { position: relative; padding: 100px 0; }
   .preorder-cart { padding: 20px; }
 }
 
+/* FAQ section */
+.faq-section { padding: 80px 0; background: var(--cream-soft); }
+.faq-section .section-header { margin-bottom: 44px; }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq-question:hover { background: rgba(247,238,220,0.5); }
+.faq-icon { font-size: 20px; color: var(--terracotta); transition: transform 0.25s ease; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.7;
+}
+.faq-answer-inner a { color: var(--green); text-decoration: underline; }
+.faq-item.open .faq-answer { max-height: 300px; }
+@media (max-width: 768px) {
+  .faq-section { padding: 56px 0; }
+  .faq-question { font-size: 15px; padding: 16px 18px; }
+  .faq-answer-inner { padding: 0 18px 16px; font-size: 14px; }
+}
+
 /* Pre-order cart summary */
 .preorder-cart {
   max-width: 620px;
@@ -653,12 +742,73 @@ section { position: relative; padding: 100px 0; }
   bottom: 0; left: 0; right: 0;
   background: #fff;
   border-top: 1px solid var(--border);
-  padding: 12px 16px;
+  padding: 10px 14px 14px;
   display: none;
-  gap: 12px;
+  gap: 10px;
   z-index: 999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
 }
-.sticky-cta .btn { flex: 1; height: 48px; font-size: 14px; }
+.sticky-cta .btn {
+  flex: 1;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.sticky-cta .btn-secondary {
+  background: var(--cream-soft);
+  color: var(--green);
+  border: 1px solid var(--border);
+}
+.sticky-cta .btn-primary {
+  background: var(--green);
+  color: #fff;
+  border: none;
+}
+.sticky-cta .btn-primary:hover { background: var(--green-dark); }
+.sticky-cta .btn svg { width: 20px; height: 20px; }
+
+/* Cookie notice */
+.cookie-notice {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 16px;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.cookie-notice.show { transform: translateY(0); }
+.cookie-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+}
+.cookie-inner p { margin: 0; }
+.cookie-btn {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .cookie-inner { flex-direction: column; align-items: flex-start; }
+  .cookie-btn { width: 100%; }
+}
 
 /* Floating mini cart */
 .mini-cart {
@@ -1082,17 +1232,18 @@ section { position: relative; padding: 100px 0; }
   <div class="hero-bg"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow reveal">Home-cooked • Fresh daily</div>
-      <h1 class="reveal">Homely food, away from home.</h1>
-      <p class="reveal">Where gluten-free, vegan, and full-of-love meet. Fresh, seasonal meals cooked like I cook for my own family.</p>
+      <div class="hero-eyebrow reveal">Auroville · Home-cooked · Pre-booked</div>
+      <h1 class="reveal">Fresh thalis cooked the day you eat them.</h1>
+      <p class="reveal">No reheated food. No hidden maida. Just home-style South Indian meals in Auroville — with vegan, gluten-free, and diabetic-friendly options. Pre-book by 11 AM for lunch.</p>
       <div class="reveal">
         <a href="order.html" class="btn btn-primary">Order now</a>
-        <a href="#menu" class="btn btn-secondary" style="margin-left:12px;">Explore today's menu</a>
+        <a href="#menu" class="btn btn-secondary" style="margin-left:12px;">See today's menu</a>
       </div>
       <div class="hero-trust reveal">
-        <span>🌿 Gluten-free</span>
-        <span>🌱 Vegan swaps</span>
+        <span>🌿 Gluten-free friendly</span>
+        <span>🌱 Vegan options</span>
         <span>🍃 No hidden maida</span>
+        <span>🚚 Auroville delivery</span>
       </div>
     </div>
   </div>
@@ -1481,28 +1632,28 @@ section { position: relative; padding: 100px 0; }
 <section>
   <div class="container">
     <div class="section-header reveal">
-      <h2>Why order from Ritu's Kitchen?</h2>
+      <h2>Why Auroville orders from Ritu's Kitchen</h2>
     </div>
     <div class="values-grid reveal">
       <div class="value-card">
         <div class="value-icon">🍳</div>
         <h4>Small batches</h4>
-        <p>Cooked in limited quantities so nothing sits around.</p>
+        <p>Cooked in limited quantities for that day. Nothing is reheated or carried over.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">🌿</div>
         <h4>Honest ingredients</h4>
-        <p>No hidden maida in masalas. I read every label.</p>
+        <p>No hidden maida in masalas. No fake cream or colours. I read every label.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">📦</div>
         <h4>Hygienic packing</h4>
-        <p>Hot food is cooled slightly and packed clean and tight.</p>
+        <p>Hot food is cooled slightly and packed clean and tight for safe delivery.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">🛵</div>
         <h4>Local delivery</h4>
-        <p>Delivered around Auroville and nearby areas.</p>
+        <p>Delivered around Auroville and nearby areas. Lunch 12–2 PM, dinner 6–8 PM.</p>
       </div>
     </div>
   </div>
@@ -1539,6 +1690,7 @@ section { position: relative; padding: 100px 0; }
   <div class="container">
     <div class="section-header reveal">
       <h2>What guests say</h2>
+      <p>Reviews from Auroville guests, neighbours, and regulars.</p>
     </div>
   </div>
   <div class="testimonial-marquee reveal">
@@ -1646,6 +1798,94 @@ section { position: relative; padding: 100px 0; }
   </div>
 </section>
 
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Questions you may have</h2>
+      <p>Everything you need to know before placing your first order.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I place an order?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Choose your dishes on our <a href="order.html">order page</a>, pick a delivery slot, and confirm on WhatsApp. You can also message us directly at <a href="https://wa.me/919043140686" target="_blank" rel="noopener">+91 90431 40686</a> with your name, area, meal preference, and any dietary needs.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Why is pre-booking required?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Every thali is cooked fresh in small batches. We need your order by 11 AM for lunch and 6 PM for dinner so we can buy, prep, cook, and deliver on time.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What are your delivery hours?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Breakfast: 9–10 AM. Lunch: 12–2 PM. Dinner: 6–8 PM. We deliver within Auroville. Delivery is included in the price.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer gluten-free, vegan, or diabetic-friendly meals?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. We offer gluten-free thalis (millets and rice-based, no maida), vegan options (no dairy/ghee), low-oil, mild-spice, and diabetic-friendly meals. Mention your needs when you order.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What payment methods do you accept?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            UPI (Google Pay / PhonePe / Paytm), cash on delivery, and bank transfer. We share payment details after confirming your order.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I cancel or change my order?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. Changes or cancellations are free up to 4 hours before your delivery slot. After that, ingredients are already prepped and we cannot refund. For same-day issues, WhatsApp us and we will try to accommodate.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is the weekly tiffin plan?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            5 fresh home-cooked meals for ₹1,100. You choose lunch or dinner, and we deliver each day at your preferred slot. Customizable for dietary needs. Ideal for guests, students, and busy residents.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -1656,7 +1896,7 @@ section { position: relative; padding: 100px 0; }
           <img src="images/logo-ritus-kitchen-regenerated.png" alt="Ritu's Kitchen logo" style="border-color: rgba(255,255,255,0.4);">
           <span>Ritu's Kitchen</span>
         </a>
-        <p>Homely Indian food cooked fresh in small batches. Pre-booking only. Gluten-free and vegan options available.</p>
+        <p>Homely Indian food cooked fresh in small batches. Pre-book by 11 AM for lunch, 6 PM for dinner. Gluten-free, vegan, and diabetic-friendly options available.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -1673,18 +1913,26 @@ section { position: relative; padding: 100px 0; }
         <a href="#">FAQ</a>
       </div>
       <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>📱 WhatsApp: <a href="https://wa.me/919043140686" target="_blank" rel="noopener">Message on WhatsApp</a> | <a href="order.html">Order online</a></p>
-        <p>📧 Email: <a href="mailto:rituskitchen.av@gmail.com">rituskitchen.av@gmail.com</a></p>
-        <p>📍 Auroville, Tamil Nadu</p>
-        <p>🕒 Kitchen hours: 7 AM – 8 PM</p>
+          <h4>Contact</h4>
+          <p>📱 WhatsApp: <a href="https://wa.me/919043140686" target="_blank" rel="noopener">Message on WhatsApp</a> | <a href="order.html">Order online</a></p>
+          <p>📧 Email: <a href="mailto:rituskitchen.av@gmail.com">rituskitchen.av@gmail.com</a></p>
+          <p>📍 Auroville, Tamil Nadu</p>
+          <p>🕒 Kitchen hours: 7 AM – 8 PM</p>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      © 2026 Ritu's Kitchen. All rights reserved.
-    </div>
-  </div>
-</footer>
+      <div class="footer-bottom">
+        © 2026 Ritu's Kitchen. All rights reserved. <a href="privacy.html">Privacy</a>
+      </div>
+      </div>
+      </footer>
+
+      <!-- Cookie notice -->
+      <div class="cookie-notice" id="cookieNotice">
+      <div class="cookie-inner">
+      <p>We use cookies to understand how visitors use our site. No personal data is sold.</p>
+      <button class="cookie-btn" id="cookieAccept">Accept</button>
+      </div>
+      </div>
 
 
 <div class="jazz-player" id="jazzPlayer">
@@ -1733,7 +1981,10 @@ section { position: relative; padding: 100px 0; }
 </div>
 
 <div class="sticky-cta">
-  <a href="tel:+919****0686" class="btn btn-secondary">Call</a>
+  <a href="https://wa.me/919043140686?text=Hi%20Ritu%2C%20I%20would%20like%20to%20place%20an%20order" class="btn btn-secondary">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.13 1.588 5.929L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
   <button class="btn btn-primary" id="stickyCartBtn" onclick="window.location.href='order.html'">Order now</button>
 </div>
 
@@ -2035,9 +2286,40 @@ if (dateInput) {
 renderCart();
 
 
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 // Jazz ambience toggle
 const jazzAudio = document.getElementById('jazzAudio');
 const jazzToggle = document.getElementById('jazzToggle');
+
+// Cookie notice
+const cookieNotice = document.getElementById('cookieNotice');
+const cookieAccept = document.getElementById('cookieAccept');
+if (cookieNotice && cookieAccept) {
+  const consent = localStorage.getItem('rk_cookie_consent');
+  if (!consent) {
+    setTimeout(() => cookieNotice.classList.add('show'), 1000);
+  }
+  cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('rk_cookie_consent', 'accepted');
+    cookieNotice.classList.remove('show');
+  });
+}
+
 if (jazzAudio && jazzToggle) {
   jazzAudio.volume = 0.4;
   jazzToggle.addEventListener('click', () => {

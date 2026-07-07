@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Ritu's Kitchen</title>
+<meta name="description" content="Sorry, we couldn't find that page. Return to Ritu's Kitchen homepage.">
+<link rel="canonical" href="https://ritus-kitchen.vercel.app/404.html">
+<meta name="robots" content="noindex, follow">
+<style>
+:root {
+  --green: #244A36;
+  --green-dark: #183528;
+  --cream: #FFF8ED;
+  --cream-soft: #F7EEDC;
+  --terracotta: #C8663D;
+  --gold: #D99B36;
+  --ink: #1F2421;
+  --body: #4C544F;
+  --muted: #727A75;
+  --border: #E4DED2;
+  --surface: #FFFFFF;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--body);
+  background: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.error-card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 48px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(31,36,33,0.08);
+}
+.error-icon {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+h1 { color: var(--ink); font-size: 28px; margin: 0 0 12px; }
+p { font-size: 16px; margin: 0 0 28px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--green-dark); }
+.btn-secondary {
+  background: var(--cream-soft);
+  color: var(--green);
+  border: 1px solid var(--border);
+}
+@media (max-width: 480px) {
+  .error-card { padding: 36px 24px; }
+  h1 { font-size: 24px; }
+}
+</style>
+<link rel="icon" type="image/png" href="images/logo-ritus-kitchen-regenerated.png">
+</head>
+<body>
+
+<div class="error-card">
+  <div class="error-icon">🍛</div>
+  <h1>This dish isn't on the menu</h1>
+  <p>Sorry, we couldn't find the page you were looking for. It may have moved or never existed.</p>
+  <div class="actions">
+    <a href="index.html" class="btn btn-primary">Back to homepage</a>
+    <a href="order.html" class="btn btn-secondary">Order a thali</a>
+  </div>
+</div>
+
+</body>
+</html>
